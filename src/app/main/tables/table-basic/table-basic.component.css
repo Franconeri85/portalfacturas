@@ -1,0 +1,29 @@
+.box-select, .box-fetch{
+    margin: 4px;
+    width: calc(33% - 6px);
+}
+.btn-consultar{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-consultar button{
+    margin: 10px 0;
+    border: 0;
+    padding: 5px;
+    background: #84c4a4;
+    cursor: pointer;
+}
+.btn-consultar button:hover{
+    background: #6eb390;
+}
+.bx--text-input--light {
+    background-color: #fff;
+}
+.box-fetch .box-select{
+    width: 100%;
+}
+.app-card .app-card__header{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,83 @@
+.box-select{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.box-select ibm-combo-box{
+    margin-left: 4px;
+}
+.box-select .span{
+    width: 110px;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.box-title{
+    width: 100%;
+    display: flex;
+}
+.padding{
+    padding: 10px;
+}
+.box-checkbox{
+    position: absolute;
+    top: 170px;
+    right: 0;
+    margin-right: 10px;
+}
+
+.card-afip{
+    max-height: 50px;
+}
+.icon-afip{
+    margin-left: 5px;
+}
+.box-fetch{
+    width: 100%;
+    display: flex;
+}
+.btn-consultar{
+    justify-content: flex-end;
+}
+.btn-consultar button{
+    margin: 10px 0;
+    border: 0;
+    padding: 5px;
+    background: #84c4a4;
+    cursor: pointer;
+}
+.btn-consultar button:hover{
+    background: #6eb390;
+}
+.box-header-card{
+    display: flex;
+    justify-content: space-between;
+}
+.botonera{
+    display: flex;
+}
+.botonera small{
+    padding: 1px 10px;
+    background: #f1f1f1;
+    border-radius: 2px;
+    border: 1px solid #e7e7e7;
+    font-weight: 100;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+.botonera small:hover{
+    background: #e7e7e7;
+}
+.box-dia{
+    width: 44px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    opacity: .2;
+    cursor: pointer;
+}

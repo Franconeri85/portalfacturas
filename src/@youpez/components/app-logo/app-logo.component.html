@@ -1,0 +1,12 @@
+<ng-container *ngIf="type === ''">
+  <img class="app-logo--black" src="assets/logopf.png" [style.width]="logoWidth"/>
+  <img class="app-logo--white" src="assets/logopf.png" [style.width]="logoWidth"/>
+</ng-container>
+
+<ng-container *ngIf="type === 'black'">
+  <img class="app-logo--force-black" src="assets/logopf.png" [style.width]="logoWidth"/>
+</ng-container>
+
+<ng-container *ngIf="type === 'white'">
+  <img class="app-logo--force-white" src="assets/logopf.png" [style.width]="logoWidth"/>
+</ng-container>

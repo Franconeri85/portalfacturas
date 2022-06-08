@@ -1,0 +1,1041 @@
+{
+    "resultado": "OK",
+    "tablero": {
+        "DEV-WSFEV1-2022-01": {
+            "PDF": {
+                "cantidad": 87,
+                "tiempoPromedio": 4.97
+            },
+            "unidades": {
+                "cantidad": 1,
+                "tiempoPromedio": 2.34
+            },
+            "leerTrx": {
+                "cantidad": 40,
+                "tiempoPromedio": 0.91
+            },
+            "estadoservidores": {
+                "cantidad": 1,
+                "tiempoPromedio": 5.72
+            },
+            "CAE": {
+                "cantidad": 111,
+                "tiempoPromedio": 5.04
+            },
+            "cuitsdst": {
+                "cantidad": 1,
+                "tiempoPromedio": 2.1
+            },
+            "paises": {
+                "cantidad": 2,
+                "tiempoPromedio": 2.67
+            },
+            "CONSULTA_TRX": {
+                "cantidad": 18,
+                "tiempoPromedio": 0.59
+            },
+            "MAIL": {
+                "cantidad": 61,
+                "tiempoPromedio": 4.92
+            },
+            "dias": [
+                {
+                    "01": {
+                        "PDF": {
+                            "cantidad": 9,
+                            "tiempoPromedio": 5.35
+                        },
+                        "unidades": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 2.34
+                        },
+                        "CAE": {
+                            "cantidad": 15,
+                            "tiempoPromedio": 3.61
+                        },
+                        "cuitsdst": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 2.1
+                        },
+                        "paises": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 2.72
+                        },
+                        "CONSULTA_TRX": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 0.51
+                        },
+                        "MAIL": {
+                            "cantidad": 9,
+                            "tiempoPromedio": 4.15
+                        },
+                        "horas": [
+                            {
+                                "09": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.56
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 3.66
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 3.17
+                                    }
+                                }
+                            },
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 4.18
+                                    },
+                                    "CAE": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 3.57
+                                    },
+                                    "cuitsdst": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 2.1
+                                    },
+                                    "paises": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 2.72
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 2.5
+                                    }
+                                }
+                            },
+                            {
+                                "12": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 4.98
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 4.95
+                                    },
+                                    "CAE": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 3.78
+                                    }
+                                }
+                            },
+                            {
+                                "16": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.46
+                                    },
+                                    "unidades": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 2.34
+                                    },
+                                    "CAE": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 3.48
+                                    },
+                                    "CONSULTA_TRX": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 0.51
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.02
+                                    }
+                                }
+                            },
+                            {
+                                "17": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 6.34
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.12
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 3.92
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "02": {
+                        "PDF": {
+                            "cantidad": 6,
+                            "tiempoPromedio": 5.37
+                        },
+                        "MAIL": {
+                            "cantidad": 6,
+                            "tiempoPromedio": 5.3
+                        },
+                        "CAE": {
+                            "cantidad": 7,
+                            "tiempoPromedio": 4.65
+                        },
+                        "horas": [
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.03
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.04
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.68
+                                    }
+                                }
+                            },
+                            {
+                                "11": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 6.31
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.89
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 4.43
+                                    }
+                                }
+                            },
+                            {
+                                "12": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 4.78
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 4.96
+                                    },
+                                    "CAE": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 4.11
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "03": {
+                        "PDF": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 4.82
+                        },
+                        "MAIL": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 5.43
+                        },
+                        "CAE": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 4.47
+                        },
+                        "horas": [
+                            {
+                                "07": {
+                                    "PDF": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.82
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 5.43
+                                    },
+                                    "CAE": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.47
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "04": {
+                        "PDF": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 5
+                        },
+                        "MAIL": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 2.93
+                        },
+                        "CAE": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 5.36
+                        },
+                        "horas": [
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 2.93
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.36
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "06": {
+                        "CONSULTA_TRX": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 0.65
+                        },
+                        "horas": [
+                            {
+                                "18": {
+                                    "CONSULTA_TRX": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 0.65
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "12": {
+                        "CONSULTA_TRX": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 0.59
+                        },
+                        "CAE": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 13.32
+                        },
+                        "horas": [
+                            {
+                                "10": {
+                                    "CONSULTA_TRX": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 0.59
+                                    }
+                                }
+                            },
+                            {
+                                "11": {
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 13.32
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "13": {
+                        "PDF": {
+                            "cantidad": 17,
+                            "tiempoPromedio": 3.93
+                        },
+                        "leerTrx": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 2.48
+                        },
+                        "CAE": {
+                            "cantidad": 19,
+                            "tiempoPromedio": 5.55
+                        },
+                        "CONSULTA_TRX": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 1.07
+                        },
+                        "horas": [
+                            {
+                                "09": {
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.81
+                                    }
+                                }
+                            },
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.42
+                                    },
+                                    "leerTrx": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 2.48
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 3.38
+                                    },
+                                    "CONSULTA_TRX": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 1.07
+                                    }
+                                }
+                            },
+                            {
+                                "11": {
+                                    "PDF": {
+                                        "cantidad": 15,
+                                        "tiempoPromedio": 3.61
+                                    },
+                                    "CAE": {
+                                        "cantidad": 15,
+                                        "tiempoPromedio": 5.62
+                                    }
+                                }
+                            },
+                            {
+                                "12": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.28
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 7.43
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "14": {
+                        "PDF": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 6.54
+                        },
+                        "CAE": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 6.82
+                        },
+                        "horas": [
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.38
+                                    },
+                                    "CAE": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 6.61
+                                    }
+                                }
+                            },
+                            {
+                                "16": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.7
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 7.42
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "18": {
+                        "PDF": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 6.7
+                        },
+                        "leerTrx": {
+                            "cantidad": 13,
+                            "tiempoPromedio": 0.81
+                        },
+                        "CAE": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 6.91
+                        },
+                        "horas": [
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 6.64
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 8.1
+                                    }
+                                }
+                            },
+                            {
+                                "11": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.8
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 4.19
+                                    }
+                                }
+                            },
+                            {
+                                "13": {
+                                    "leerTrx": {
+                                        "cantidad": 11,
+                                        "tiempoPromedio": 0.67
+                                    }
+                                }
+                            },
+                            {
+                                "16": {
+                                    "leerTrx": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 1.59
+                                    }
+                                }
+                            },
+                            {
+                                "17": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.72
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 7.26
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "19": {
+                        "PDF": {
+                            "cantidad": 3,
+                            "tiempoPromedio": 6.33
+                        },
+                        "leerTrx": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 2.44
+                        },
+                        "CAE": {
+                            "cantidad": 10,
+                            "tiempoPromedio": 4.28
+                        },
+                        "paises": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 2.62
+                        },
+                        "MAIL": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 6.02
+                        },
+                        "horas": [
+                            {
+                                "08": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.68
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 7.27
+                                    }
+                                }
+                            },
+                            {
+                                "09": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.36
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 5.9
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 4.1
+                                    }
+                                }
+                            },
+                            {
+                                "10": {
+                                    "CAE": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 3.53
+                                    }
+                                }
+                            },
+                            {
+                                "11": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 5.94
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.14
+                                    },
+                                    "CAE": {
+                                        "cantidad": 5,
+                                        "tiempoPromedio": 4.17
+                                    }
+                                }
+                            },
+                            {
+                                "16": {
+                                    "paises": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 2.62
+                                    }
+                                }
+                            },
+                            {
+                                "17": {
+                                    "leerTrx": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 2.44
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "20": {
+                        "PDF": {
+                            "cantidad": 7,
+                            "tiempoPromedio": 4.24
+                        },
+                        "estadoservidores": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 5.72
+                        },
+                        "CAE": {
+                            "cantidad": 7,
+                            "tiempoPromedio": 5.7
+                        },
+                        "MAIL": {
+                            "cantidad": 7,
+                            "tiempoPromedio": 4.55
+                        },
+                        "horas": [
+                            {
+                                "09": {
+                                    "PDF": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 3.82
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 4.32
+                                    },
+                                    "CAE": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 5.94
+                                    }
+                                }
+                            },
+                            {
+                                "16": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.7
+                                    },
+                                    "estadoservidores": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 5.72
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 4.26
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 5.96
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "21": {
+                        "CAE": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 5.74
+                        },
+                        "horas": [
+                            {
+                                "12": {
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.74
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "24": {
+                        "PDF": {
+                            "cantidad": 6,
+                            "tiempoPromedio": 5.36
+                        },
+                        "CAE": {
+                            "cantidad": 7,
+                            "tiempoPromedio": 6.78
+                        },
+                        "CONSULTA_TRX": {
+                            "cantidad": 13,
+                            "tiempoPromedio": 0.54
+                        },
+                        "MAIL": {
+                            "cantidad": 6,
+                            "tiempoPromedio": 5.29
+                        },
+                        "horas": [
+                            {
+                                "09": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.4
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 5.92
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 10.55
+                                    }
+                                }
+                            },
+                            {
+                                "15": {
+                                    "PDF": {
+                                        "cantidad": 5,
+                                        "tiempoPromedio": 5.16
+                                    },
+                                    "CAE": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 6.15
+                                    },
+                                    "CONSULTA_TRX": {
+                                        "cantidad": 13,
+                                        "tiempoPromedio": 0.54
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 5,
+                                        "tiempoPromedio": 5.16
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "25": {
+                        "PDF": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 6.44
+                        },
+                        "MAIL": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 6.1
+                        },
+                        "CAE": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 5.06
+                        },
+                        "horas": [
+                            {
+                                "16": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.44
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.1
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.06
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "26": {
+                        "PDF": {
+                            "cantidad": 9,
+                            "tiempoPromedio": 4.79
+                        },
+                        "CAE": {
+                            "cantidad": 10,
+                            "tiempoPromedio": 4.19
+                        },
+                        "CONSULTA_TRX": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 0.68
+                        },
+                        "MAIL": {
+                            "cantidad": 8,
+                            "tiempoPromedio": 5.06
+                        },
+                        "horas": [
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.54
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 5.99
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 7.18
+                                    }
+                                }
+                            },
+                            {
+                                "16": {
+                                    "PDF": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.91
+                                    },
+                                    "CAE": {
+                                        "cantidad": 5,
+                                        "tiempoPromedio": 3.9
+                                    },
+                                    "CONSULTA_TRX": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 0.68
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 5.21
+                                    }
+                                }
+                            },
+                            {
+                                "19": {
+                                    "PDF": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.23
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.71
+                                    },
+                                    "CAE": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 3.8
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "27": {
+                        "PDF": {
+                            "cantidad": 12,
+                            "tiempoPromedio": 4.96
+                        },
+                        "MAIL": {
+                            "cantidad": 11,
+                            "tiempoPromedio": 5.05
+                        },
+                        "CAE": {
+                            "cantidad": 12,
+                            "tiempoPromedio": 4.12
+                        },
+                        "horas": [
+                            {
+                                "09": {
+                                    "PDF": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.15
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 4.48
+                                    },
+                                    "CAE": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.49
+                                    }
+                                }
+                            },
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 5,
+                                        "tiempoPromedio": 4.61
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 5,
+                                        "tiempoPromedio": 4.81
+                                    },
+                                    "CAE": {
+                                        "cantidad": 5,
+                                        "tiempoPromedio": 3.68
+                                    }
+                                }
+                            },
+                            {
+                                "13": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.86
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.05
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 4.48
+                                    }
+                                }
+                            },
+                            {
+                                "15": {
+                                    "PDF": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 6.52
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 5.99
+                                    },
+                                    "CAE": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 4.33
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "28": {
+                        "PDF": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 4.91
+                        },
+                        "leerTrx": {
+                            "cantidad": 25,
+                            "tiempoPromedio": 0.84
+                        },
+                        "CAE": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 4.85
+                        },
+                        "MAIL": {
+                            "cantidad": 4,
+                            "tiempoPromedio": 4.93
+                        },
+                        "horas": [
+                            {
+                                "12": {
+                                    "leerTrx": {
+                                        "cantidad": 2,
+                                        "tiempoPromedio": 1.07
+                                    }
+                                }
+                            },
+                            {
+                                "15": {
+                                    "PDF": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.91
+                                    },
+                                    "leerTrx": {
+                                        "cantidad": 23,
+                                        "tiempoPromedio": 0.82
+                                    },
+                                    "CAE": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.85
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 4.93
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "31": {
+                        "PDF": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 6.46
+                        },
+                        "MAIL": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 6.17
+                        },
+                        "CAE": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 7.51
+                        },
+                        "horas": [
+                            {
+                                "09": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.46
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.17
+                                    },
+                                    "CAE": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 7.51
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

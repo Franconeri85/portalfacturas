@@ -1,0 +1,102 @@
+<div class="mb-8" fxHide fxShow.lt-md>
+  <youpez-logo class="cursor-pointer" logoWidth="130px"></youpez-logo>
+</div>
+<h1 class="app-expressive-heading-06 mb-1">Registrarse</h1>
+<div class="app-body-long-02 mb-8">
+  ¿Ya tiene una cuenta?
+  <a ibmLink routerLink="../signin">Ingresar</a>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="app-form">
+    <div fxLayout="row" class="app-form__row">
+      <div fxFlex="50">
+        <div class="app-form__item">
+          <ibm-label
+            [helperText]="''"
+            [invalid]="isValid('firstName')"
+            [invalidText]="'Este campo es requerido'">
+            Nombre
+            <input
+              formControlName="firstName"
+              ibmText
+              size="md"
+              [invalid]="isValid('firstName')"
+              [disabled]="false"
+              theme="light"
+              [placeholder]="'Nombre'"
+              [autocomplete]="true">
+          </ibm-label>
+        </div>
+      </div>
+      <div fxFlex="50">
+        <div class="app-form__item">
+          <ibm-label
+            [helperText]="''"
+            [invalid]="isValid('lastName')"
+            [invalidText]="'Este campo es requerido'">
+            Apellido
+            <input
+              formControlName="lastName"
+              ibmText
+              size="md"
+              [invalid]="isValid('lastName')"
+              [disabled]="false"
+              theme="light"
+              [placeholder]="'Apellido'"
+              [autocomplete]="true">
+          </ibm-label>
+        </div>
+      </div>
+    </div>
+    <div class="app-form__item">
+      <ibm-label
+        [helperText]="''"
+        [invalid]="isValid('email')"
+        [invalidText]="'Este campo es requerido'">
+        Email 
+        <input
+          formControlName="email"
+          ibmText
+          size="md"
+          [invalid]="isValid('email')"
+          [disabled]="false"
+          theme="light"
+          [placeholder]="'Email'"
+          [autocomplete]="true">
+      </ibm-label>
+    </div>
+    <div class="app-form__item">
+      <ibm-label
+        [helperText]="''"
+        [invalid]="isValid('company')"
+        [invalidText]="'Este campo es requerido'">
+        Compañía
+        <input
+          formControlName="company"
+          ibmText
+          size="md"
+          [invalid]="isValid('company')"
+          [disabled]="false"
+          theme="light"
+          [placeholder]="'Compañía'"
+          [autocomplete]="true">
+      </ibm-label>
+    </div>
+    <div class="app-form__item app-form__item--opts">
+      <!-- <div class="flex justify-between items-center">
+        <ibm-checkbox formControlName="condition">
+          I have read and accept
+          <a class="app-link">terms & conditions</a>
+        </ibm-checkbox>
+      </div> -->
+    </div>
+    <div class="app-form__submit">
+      <button type="submit" class="app-ibm-btn-full" ibmButton="primary" size="field">
+        Crear cuenta
+        <svg class="bx--btn__icon" ibmIconArrowRight size="20"></svg>
+      </button>
+    </div>
+  </div>
+</form>
+
+

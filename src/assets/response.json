@@ -1,0 +1,224 @@
+{
+    "resultado": "OK",
+    "tablero": {
+        "wsfe-DEV-2022-05": {
+            "PDF": {
+                "cantidad": 81,
+                "tiempoPromedio": 8.84
+            },
+            "leerTrx": {
+                "cantidad": 1,
+                "tiempoPromedio": 0.61
+            },
+            "CAE": {
+                "cantidad": 58,
+                "tiempoPromedio": 4.93
+            },
+            "MAIL": {
+                "cantidad": 81,
+                "tiempoPromedio": 2.49
+            },
+            "informar_CAEA": {
+                "cantidad": 38,
+                "tiempoPromedio": 5.47
+            },
+            "dias": [
+                {
+                    "03": {
+                        "PDF": {
+                            "cantidad": 39,
+                            "tiempoPromedio": 8.48
+                        },
+                        "MAIL": {
+                            "cantidad": 39,
+                            "tiempoPromedio": 2.29
+                        },
+                        "CAE": {
+                            "cantidad": 49,
+                            "tiempoPromedio": 4.64
+                        },
+                        "horas": [
+                            {
+                                "12": {
+                                    "PDF": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 9.07
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 2.82
+                                    },
+                                    "CAE": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 6.65
+                                    }
+                                }
+                            },
+                            {
+                                "21": {
+                                    "PDF": {
+                                        "cantidad": 36,
+                                        "tiempoPromedio": 8.43
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 36,
+                                        "tiempoPromedio": 2.25
+                                    },
+                                    "CAE": {
+                                        "cantidad": 45,
+                                        "tiempoPromedio": 4.46
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "04": {
+                        "PDF": {
+                            "cantidad": 9,
+                            "tiempoPromedio": 10.2
+                        },
+                        "MAIL": {
+                            "cantidad": 9,
+                            "tiempoPromedio": 3.28
+                        },
+                        "CAE": {
+                            "cantidad": 9,
+                            "tiempoPromedio": 6.55
+                        },
+                        "horas": [
+                            {
+                                "09": {
+                                    "PDF": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 10.15
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 3.14
+                                    },
+                                    "CAE": {
+                                        "cantidad": 6,
+                                        "tiempoPromedio": 6.7
+                                    }
+                                }
+                            },
+                            {
+                                "10": {
+                                    "PDF": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 10.29
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 3.56
+                                    },
+                                    "CAE": {
+                                        "cantidad": 3,
+                                        "tiempoPromedio": 6.25
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "05": {
+                        "PDF": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 10.28
+                        },
+                        "leerTrx": {
+                            "cantidad": 1,
+                            "tiempoPromedio": 0.61
+                        },
+                        "MAIL": {
+                            "cantidad": 2,
+                            "tiempoPromedio": 4.35
+                        },
+                        "informar_CAEA": {
+                            "cantidad": 5,
+                            "tiempoPromedio": 7.19
+                        },
+                        "horas": [
+                            {
+                                "19": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 9.96
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 4.3
+                                    },
+                                    "informar_CAEA": {
+                                        "cantidad": 4,
+                                        "tiempoPromedio": 7.35
+                                    }
+                                }
+                            },
+                            {
+                                "20": {
+                                    "PDF": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 10.6
+                                    },
+                                    "leerTrx": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 0.61
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 4.4
+                                    },
+                                    "informar_CAEA": {
+                                        "cantidad": 1,
+                                        "tiempoPromedio": 6.56
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "06": {
+                        "PDF": {
+                            "cantidad": 31,
+                            "tiempoPromedio": 8.81
+                        },
+                        "MAIL": {
+                            "cantidad": 31,
+                            "tiempoPromedio": 2.38
+                        },
+                        "informar_CAEA": {
+                            "cantidad": 33,
+                            "tiempoPromedio": 5.21
+                        },
+                        "horas": [
+                            {
+                                "11": {
+                                    "PDF": {
+                                        "cantidad": 31,
+                                        "tiempoPromedio": 8.81
+                                    },
+                                    "MAIL": {
+                                        "cantidad": 31,
+                                        "tiempoPromedio": 2.38
+                                    },
+                                    "informar_CAEA": {
+                                        "cantidad": 33,
+                                        "tiempoPromedio": 5.21
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "AFIP": "UP",
+        "COLAS": [],
+        "current_week": {}
+    }
+}
