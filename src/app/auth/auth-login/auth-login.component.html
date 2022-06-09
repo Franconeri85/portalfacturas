@@ -46,7 +46,8 @@
     <div class="app-form__item app-form__item--opts">
       <div class="flex justify-between items-center">
         <ibm-checkbox
-          checked="true">
+          (change)="recordar($event)"
+          checked="false">
           Recuerdame
         </ibm-checkbox>
         <a ibmLink routerLink="../forgot-password">¿Olvidó su contraseña?</a>
@@ -86,3 +87,6 @@
   </div>
 </div> -->
 
+<div class="box-loading" *ngIf="loading">
+  <img src="assets/loading.gif" />
+</div>

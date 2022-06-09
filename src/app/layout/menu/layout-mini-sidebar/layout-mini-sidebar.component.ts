@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout-mini-sidebar',
@@ -9,6 +10,8 @@ export class LayoutMiniSidebarComponent implements OnInit {
 
   @Output() itemClick: EventEmitter<any> = new EventEmitter()
 
+  public nombre: string;
+  public apellido: string;
   public notifications = [
     {
       level: 'bug',
@@ -91,12 +94,19 @@ export class LayoutMiniSidebarComponent implements OnInit {
 
   public loading: boolean = false
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+    this.nombre = localStorage.getItem('name');
+    this.apellido = localStorage.getItem('surname');
   }
+  logout(){
+    localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['/auth/basic/signin']);
 
+  }
   onItemClick(event) {
     this.itemClick.next(event)
   }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {Router, ActivatedRoute, NavigationStart, NavigationEnd, NavigationCancel} from "@angular/router"
 import {environment} from "../environments/environment"
 import {SettingsService} from "@youpez/services/settings.service"
+import { AppComponentService } from './app.component.service'
 
 const getSessionStorage = (key) => {
   return sessionStorage.getItem(key)
@@ -13,15 +14,17 @@ const getSessionStorage = (key) => {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  private appLoaded: boolean = false
-
+  private appLoaded: boolean = false;
+  public loading: boolean = false;
   constructor(private settingsService: SettingsService,
               private router: Router,
+              private service: AppComponentService,
               private route: ActivatedRoute,) {
 
   }
 
   ngOnInit(): void {
+    this.checkToken();
     this.route.queryParams
       .subscribe((queryParams) => {
         if (queryParams.theme) {
@@ -60,4 +63,14 @@ export class AppComponent implements OnInit {
       }
     })
   }
+  checkToken(){
+      this.service.obtenerTokenValido().subscribe(res =>{
+        if(!res)
+          this.router.navigate(['/auth/basic/signin']);
+      },
+      err =>{
+        this.router.navigate(['/auth/basic/signin']);
+      })
+  }
+  
 }

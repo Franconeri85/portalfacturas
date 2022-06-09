@@ -13,14 +13,14 @@
         <div class="app-form__item">
           <ibm-label
             [helperText]="''"
-            [invalid]="isValid('firstName')"
+            [invalid]="isValid('name')"
             [invalidText]="'Este campo es requerido'">
             Nombre
             <input
-              formControlName="firstName"
+              formControlName="name"
               ibmText
               size="md"
-              [invalid]="isValid('firstName')"
+              [invalid]="isValid('name')"
               [disabled]="false"
               theme="light"
               [placeholder]="'Nombre'"
@@ -32,14 +32,14 @@
         <div class="app-form__item">
           <ibm-label
             [helperText]="''"
-            [invalid]="isValid('lastName')"
+            [invalid]="isValid('surname')"
             [invalidText]="'Este campo es requerido'">
             Apellido
             <input
-              formControlName="lastName"
+              formControlName="surname"
               ibmText
               size="md"
-              [invalid]="isValid('lastName')"
+              [invalid]="isValid('surname')"
               [disabled]="false"
               theme="light"
               [placeholder]="'Apellido'"
@@ -68,19 +68,50 @@
     <div class="app-form__item">
       <ibm-label
         [helperText]="''"
-        [invalid]="isValid('company')"
+        [invalid]="isValid('phone')"
         [invalidText]="'Este campo es requerido'">
-        Compañía
+        Teléfono
         <input
-          formControlName="company"
+          formControlName="phone"
           ibmText
           size="md"
-          [invalid]="isValid('company')"
+          type="number"
+          [invalid]="isValid('phone')"
           [disabled]="false"
           theme="light"
-          [placeholder]="'Compañía'"
+          [placeholder]="'Teléfono'"
           [autocomplete]="true">
       </ibm-label>
+    </div>
+    <div class="app-form__item">
+      <ibm-label
+        [helperText]="''"
+        [invalid]="isValid('password')"
+        [invalidText]="'Este campo es requerido'">
+        Contraseña
+        <input
+          formControlName="password"
+          type="password"
+          ibmText
+          size="md"
+          [invalid]="isValid('phone')"
+          [disabled]="false"
+          theme="light"
+          [placeholder]="'Contraseña'"
+          [autocomplete]="false">
+      </ibm-label>
+    </div>
+    <div class="box-select">
+      <label class="span">Compañía</label>
+      <ibm-combo-box
+        style="width:100%"
+        [placeholder]="'Seleccionar...'"
+        [items]="companyList"
+        (selected)="selectedCompany($event)"
+        size="md"
+        [appendInline]="false">
+        <ibm-dropdown-list></ibm-dropdown-list>
+      </ibm-combo-box>
     </div>
     <div class="app-form__item app-form__item--opts">
       <!-- <div class="flex justify-between items-center">

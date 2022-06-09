@@ -1,10 +1,10 @@
-<div class="app-a-box app-scrollbar-fix">
+<div *ngIf="usuario" class="app-a-box app-scrollbar-fix">
   <ng-scrollbar>
     <div class="bg-cover cursor-pointer"
          style="background-image:url('assets/img/pixabay/orange-1377310_1920.jpg');height: 200px">
 
     </div>
-    <div fxLayout="row wrap">
+    <div fxLayout="row wrap" >
       <div fxFlex.gt-md="240px" fxFlex="100%">
         <div class="app-content app-content--default relative sticky top-0" ngClass.gt-md="-mt-20">
           <div fxLayout="row wrap">
@@ -17,19 +17,17 @@
             <div fxFlex="70%" fxFlex.gt-md="100%">
               <div ngClass.lt-md="ml-2" ngClass.md="ml-2" ngClass.gt-md="pt-4">
                 <div>
-                  <div class="app-productive-heading-03 font-bold">David Robson</div>
-                  <div class="app-body-short-01 opacity-75">@robsonDave</div>
+                  <div class="app-productive-heading-03 font-bold">{{usuario.name}} {{usuario.surname}}</div>
+                  <div class="app-body-short-01 opacity-75">{{usuario.email}}</div>
                 </div>
                 <div class="app-body-short-01 mt-4 mb-4">
-                  My passion for communication drew me to public relations and marketing, where I have worked with
-                  clients
-                  across a range of industries, including retail, education and technology.
+                  {{usuario.user_type_id.name}}
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="relative">
+          <!-- <div class="relative">
             <div class="flex items-center mb-2">
               <youpez-ibm-icon iconName="pin" iconSize="20"></youpez-ibm-icon>
               <div class="ml-3">
@@ -48,17 +46,17 @@
                 <div class="app-productive-heading-01">Marketing Manager</div>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="mt-5">
+          <!-- <div class="mt-5">
             <div class="app-subtitle mb-2">SKILLS</div>
             <ibm-tag type="cool-gray">html</ibm-tag> <ibm-tag type="cool-gray">css</ibm-tag>
             <ibm-tag type="cool-gray">marketing</ibm-tag> <ibm-tag type="cool-gray">campaigns</ibm-tag>
             <ibm-tag type="cool-gray">sales</ibm-tag> <ibm-tag type="cool-gray">tech</ibm-tag>
-          </div>
+          </div> -->
         </div>
       </div>
-      <div fxFlex.gt-md="" fxFlex="100%">
+      <!-- <div fxFlex.gt-md="" fxFlex="100%">
         <div class="mt-4">
           <div class="app-card app-card--m-b">
             <div class="app-card__blocks" fxLayout="row wrap" ngClass.lt-lg="app-card__blocks--collapse">
@@ -394,8 +392,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div fxFlex.gt-md="330px" fxFlex="100%">
+      </div> -->
+      <!-- <div fxFlex.gt-md="330px" fxFlex="100%">
         <div class="app-content app-content--default sticky top-0">
           <div class="app-card app-card--m-b mb-4">
             <div class="app-card__content">
@@ -480,7 +478,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </ng-scrollbar>
 </div>

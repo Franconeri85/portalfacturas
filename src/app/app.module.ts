@@ -25,10 +25,13 @@ import {environment} from '../environments/environment'
 import {EffectsModule} from '@ngrx/effects'
 import {AppEffects} from './store/app.effects'
 import {AppComponentService} from './app.component.service'
+import {LoadingComponent} from './main/loading/loading.component'
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

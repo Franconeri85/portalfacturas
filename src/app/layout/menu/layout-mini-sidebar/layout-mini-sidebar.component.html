@@ -295,7 +295,7 @@
       <div class="app-mini-sidebar__list__item__pill"
            placement="right"
            container="body"
-           ngbTooltip="Account details"
+           ngbTooltip="Detalles del perfil"
            ngbDropdownToggle>
         <youpez-ibm-icon iconName="user" iconSize="24"></youpez-ibm-icon>
       </div>
@@ -308,7 +308,7 @@
             <div class="app-list__item__content mr-4">
               <div>
                 <div class="app-helper-text-01">Registrado como</div>
-                <div class="app-expressive-heading-02">David Robson</div>
+                <div class="app-expressive-heading-02">{{nombre}} {{apellido}}</div>
               </div>
             </div>
           </div>
@@ -320,8 +320,8 @@
           </div>
     
           <div class="app-list__divider"></div>
-          <div class="app-list__item mb-2" ngbDropdownItem routerLink="/auth/basic/signin">
-            <div class="app-list__item__content">
+          <div class="app-list__item mb-2" ngbDropdownItem (click)="logout()">
+            <div class="app-list__item__content" >
               Salir
             </div>
           </div>

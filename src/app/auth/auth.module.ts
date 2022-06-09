@@ -10,6 +10,8 @@ import {AuthForgotPasswordComponent} from './auth-forgot-password/auth-forgot-pa
 import {AuthResetPasswordComponent} from './auth-reset-password/auth-reset-password.component'
 import {AuthBookADemoComponent} from './auth-book-a-demo/auth-book-a-demo.component'
 import {ComingSoonComponent} from "./coming-soon/coming-soon.component"
+import { AuthService } from "./auth.service";
+import { AppComponentService } from '../app.component.service'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {ComingSoonComponent} from "./coming-soon/coming-soon.component"
     CommonModule,
     AuthRoutingModule,
     SharedModule,
-  ]
+  ],
+  providers: [AuthService, AppComponentService]
 })
 export class AuthModule {
 }

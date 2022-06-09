@@ -14,7 +14,7 @@ import {FechaModel} from '../../models/fecha.model';
 export class DashboardDefaultComponent implements OnInit {
   public diaSeleccionado:string;
   public mesSeleccionado:string;
-
+  public loading: boolean;
   public loaded = false
   public chartOptions = {}
   public chartOptions2 = {}
@@ -44,6 +44,7 @@ export class DashboardDefaultComponent implements OnInit {
     {
       content: "wsfex",
       key: "wsfex",
+      selected: true
     },
     {
       content: "wstmxca",
@@ -205,8 +206,9 @@ export class DashboardDefaultComponent implements OnInit {
   }
 
   inicializar(){
+    this.loading = true;
     this.service.obtenerTablero(this.entornoSelected, this.webServiceSelected, this.companySelected, this.yearSelected, this.monthSelected).subscribe(res =>{
-
+      this.loading = false;
       this.data = res;
       this.caeMes = this.obtenerEstadisticaMes();
 
@@ -222,6 +224,7 @@ export class DashboardDefaultComponent implements OnInit {
       this.createChartStatics();
     },
     (err: any) =>{
+      this.loading = false;
       this.toast(err.error.detalleError, 5000);
     })
   }
@@ -290,8 +293,10 @@ export class DashboardDefaultComponent implements OnInit {
   }
 
   obtenerClientes(){
+    this.loading = true;
     this.service.obtenerClientes().subscribe(
       clientes =>{
+        this.loading = false;
         this.listaClientes = [{
           clientes: [
             {
@@ -343,7 +348,6 @@ export class DashboardDefaultComponent implements OnInit {
     return;
   }
   obtenerDiaActual(diaSeteado?){
-    debugger
     if(!diaSeteado){
       const d = new Date();
       d.setHours(d.getHours() - 3);

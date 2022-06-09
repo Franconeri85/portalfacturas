@@ -13,13 +13,13 @@ const getSizeFrom = (name) => {
   return trans[name]
 }
 
-
 @Component({
   selector: 'app-table-basic',
   templateUrl: './table-basic.component.html',
   styleUrls: ['./table-basic.component.css']
 })
 export class TableBasicComponent implements OnInit {
+  public loading: boolean;
 
   public size = 'sh'
   public model = getDummyModel()
@@ -49,9 +49,10 @@ export class TableBasicComponent implements OnInit {
   }
 
   obtenerComprobantes(){
+    this.loading = true;
     this.service.obtenerComprobantes().subscribe(
       (res:any) =>{
-        debugger;
+        this.loading = false;
         let registros = [];
 
         res.registros.forEach(i => {
@@ -136,7 +137,6 @@ export class TableBasicComponent implements OnInit {
       //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
       //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
       // ]
-        debugger
       let reg = new TableItem({data: ""});
       let fecha =  new TableItem({data: e.fecha}); 
       let cuit =  new TableItem({data: e.cuit}); 
