@@ -7,6 +7,7 @@ import {
   Validators
 } from "@angular/forms"
 import {Router} from '@angular/router'
+import { Auth } from 'aws-amplify'
 
 import {NotificationService} from "carbon-components-angular"
 import { AppComponentService } from 'src/app/app.component.service'
@@ -47,29 +48,43 @@ export class AuthLoginComponent implements OnInit {
     };
     this.appService.changeMessage(messageToSend);
 }
-  onSubmit() {
+  async onSubmit() {
     this.formGroup.markAllAsTouched()
     this.loading = true;
-    this.service.login({email: this.formGroup.value.email, password: this.formGroup.value.password}).subscribe( (res: any) =>{
-      this.loading = false;
-      if(this.recordarCuenta){
-        localStorage.setItem('tk',res.user.token);
-      }else{
-        sessionStorage.setItem('tk',res.user.token);
-      }
-    
-      localStorage.setItem('name',res.user.name);
-      localStorage.setItem('rol',res.user.user_type_id.name);
-      localStorage.setItem('surname',res.user.surname);
-      localStorage.setItem('id',res.user._id);
-      localStorage.setItem('company',res.user.company);
 
-      this.router.navigate(['/app']);
-    },
-    err =>{
-      this.loading = false;
-      this.toast("error", "Error al iniciar sesión", err.error.message);
-    })
+    try{
+      debugger
+      var user = await Auth.signIn(this.formGroup.value.email, this.formGroup.value.password);
+      var tokens = user.signInUserSession;
+      
+      if( tokens != null ) {
+        console.log('Usuario autenticado');
+        this.router.navigate(['/app']);
+      }
+
+    }catch (error){
+      console.log(error);
+    }
+    // this.service.login({email: this.formGroup.value.email, password: this.formGroup.value.password}).subscribe( (res: any) =>{
+    //   this.loading = false;
+    //   if(this.recordarCuenta){
+    //     localStorage.setItem('tk',res.user.token);
+    //   }else{
+    //     sessionStorage.setItem('tk',res.user.token);
+    //   }
+    
+    //   localStorage.setItem('name',res.user.name);
+    //   localStorage.setItem('rol',res.user.user_type_id.name);
+    //   localStorage.setItem('surname',res.user.surname);
+    //   localStorage.setItem('id',res.user._id);
+    //   localStorage.setItem('company',res.user.company);
+
+    //   this.router.navigate(['/app']);
+    // },
+    // err =>{
+    //   this.loading = false;
+    //   this.toast("error", "Error al iniciar sesión", err.error.message);
+    // })
     // setTimeout(() => {
     //   this.router.navigate(['/app'])
     // }, 500);

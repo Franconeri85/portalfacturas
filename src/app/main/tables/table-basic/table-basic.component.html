@@ -92,7 +92,6 @@
                   [autocomplete]="true">
                 </ibm-label>
               </div>
-              <div class="box-fetch">
                 <div class="box-select">
                   <div class="span">Punto de venta</div>
                   <ibm-label
@@ -105,40 +104,30 @@
                     [disabled]="false"
                     theme="light"
                     [placeholder]="''"
+                    type="number"
                     [autocomplete]="true">
                   </ibm-label>
                 </div>
-              </div>
               <div class="box-fetch">
-                <div class="box-select">
                   <div class="span">Fecha desde - hasta</div>
                   <ibm-date-picker
                   style="width:100%"
                   class="app-inline-block"
                   size="md" range="true">
                 </ibm-date-picker>
-                </div>
-          
               </div>
+              <div class="box-select box-btn">
+                <div class="btn-consultar">
+                  <button (click)="obtenerComprobantes()">Buscar</button>
+                </div>
+              </div>
+            
             </div>
           </div>
         </div>
   
       </div>
       <div class="mb-6">
-        <!-- <div class="mb-4">
-          <div class="app-subtitle">Listado de comprobantes</div>
-          <ibm-radio-group
-            aria-label="radiogroup">
-            <ibm-radio *ngFor="let radio of tableSizes"
-                       (change)="onChange1($event)"
-                       [checked]="radio.checked"
-                       [value]="radio.num"
-                       [disabled]="radio.disabled">
-              {{radio.num}}
-            </ibm-radio>
-          </ibm-radio-group>
-        </div> -->
         <div class="app-productive-heading-02 mb-2">Comprobantes emitidos</div>
         <ibm-table-container *ngIf="tablaRegistros">
           <app-dummy-table-rich
@@ -154,86 +143,6 @@
           </app-dummy-table-rich>
         </ibm-table-container>
       </div>
-
-      <!-- <div class="mb-6">
-        <div class="app-productive-heading-02 mb-2">STRIPED TABLE</div>
-        <ibm-table-container>
-          <app-dummy-table-rich
-            [stickyHeader]="false"
-            [size]="size"
-            [skeleton]="false"
-            [enableSingleSelect]="true"
-            [showSelectionColumn]="false"
-            [striped]="true"
-            [sortable]="false"
-            [isDataGrid]="false">
-          </app-dummy-table-rich>
-        </ibm-table-container>
-      </div> -->
-
-      <!-- <div class="mb-6">
-        <div class="app-productive-heading-02 mb-2">SORTABLE TABLE</div>
-        <ibm-table-container>
-          <app-dummy-table-rich
-            [stickyHeader]="false"
-            [size]="size"
-            [skeleton]="false"
-            [enableSingleSelect]="true"
-            [showSelectionColumn]="false"
-            [striped]="false"
-            [sortable]="true"
-            [isDataGrid]="false">
-          </app-dummy-table-rich>
-        </ibm-table-container>
-      </div> -->
-
-      <!-- <div class="mb-6">
-        <div class="app-productive-heading-02 mb-2">SELECTABLE TABLE</div>
-        <ibm-table-container>
-          <app-dummy-table-rich
-            [stickyHeader]="false"
-            [size]="size"
-            [skeleton]="false"
-            [enableSingleSelect]="false"
-            [showSelectionColumn]="true"
-            [striped]="false"
-            [sortable]="true"
-            [isDataGrid]="true">
-          </app-dummy-table-rich>
-        </ibm-table-container>
-      </div> -->
-
-      <!-- <div class="mb-6">
-        <div class="app-productive-heading-02 mb-2">SINGLE SELECT TABLE</div>
-        <ibm-table-container>
-          <app-dummy-table-rich
-            [stickyHeader]="false"
-            [size]="size"
-            [skeleton]="false"
-            [enableSingleSelect]="true"
-            [showSelectionColumn]="true"
-            [striped]="false"
-            [sortable]="true"
-            [isDataGrid]="true">
-          </app-dummy-table-rich>
-        </ibm-table-container>
-      </div> -->
-
-      <!-- <div class="mb-6">
-        <div class="app-productive-heading-02 mb-2">SKELETON TABLE</div>
-        <ibm-table-container>
-          <app-dummy-table-rich
-            [stickyHeader]="false"
-            [size]="size"
-            [skeleton]="true"
-            [enableSingleSelect]="true"
-            [showSelectionColumn]="true"
-            [striped]="false"
-            [sortable]="true"
-            [isDataGrid]="true">
-          </app-dummy-table-rich>
-        </ibm-table-container>
-      </div> -->
     </div>
   </div>
 </youpez-content-simple>

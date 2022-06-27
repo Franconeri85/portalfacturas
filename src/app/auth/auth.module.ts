@@ -23,6 +23,7 @@ import { AppComponentService } from '../app.component.service'
     AuthBookADemoComponent,
     ComingSoonComponent,
   ],
+  exports:[AuthSignupComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

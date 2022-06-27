@@ -4,12 +4,13 @@
 }
 .title-header, .title-body{
     padding: 8px;
-    width: 250px;
+    width: 25%;
     display: flex;
     align-items: center;
 }
 .title-header{
     font-weight: 600;
+    background: whitesmoke;
 }
 .title-body button{
     padding: 5px;
@@ -19,6 +20,10 @@
     cursor: pointer;
     margin: 2px;
     border-radius: 3px;
+}
+.title-body .modify{
+    background-color: rgb(218, 140, 39);
+
 }
 .title-body button:hover{
     background-color: rgb(133, 14, 14);
@@ -37,4 +42,13 @@
 }
 .box-loading img{
     width: 40px;
+}
+.box-select{
+    margin: 4px;
+}
+.padding{
+    padding: 15px;
+}
+.bx--btn--primary {
+    background-color: #70bd96  !important;
 }

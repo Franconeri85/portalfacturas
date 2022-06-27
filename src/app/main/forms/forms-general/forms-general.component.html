@@ -6,6 +6,73 @@
 <youpez-content-simple mainTitle="Usuarios">
   <div fxLayout="row wrap">
     <div fxFlex="100%" fxFlex.gt-md="100%" class="app-card-row">
+      <div class="app-productive-heading-02 px-4" *ngIf="showModal">Agregar nuevo</div>
+      <div fxLayout="row wrap" class="mb-12">
+        <div fxFlex="100%" fxFlex.gt-md="100%">
+          <div class="app-card padding">
+            <div class="app-form__submit" *ngIf="!showModal">
+           
+              <button (click)="modal(true)" class="app-ibm-btn-full" ibmButton="primary" size="field">
+                Agregar nuevo usuario
+                <svg class="bx--btn__icon" ibmIconArrowRight size="20"></svg>
+              </button>
+            </div>
+            <app-auth-signup *ngIf="showModal" (cerrarModal)="modal($event)" (refresh)="obtenerUsuariosPorCompania()" [esRegistro]="false"></app-auth-signup>
+            <!-- <div class="app-card__content">
+          <div fxFlex="15%" fxFlex.gt-md="15%">
+            <div class="box-select">
+              <div class="span">Nombre</div>
+              <ibm-label
+                [invalid]="false"
+                [invalidText]="''">
+              <input
+                ibmText
+                [size]="'sm'"
+                [invalid]="false"
+                [disabled]="false"
+                theme="light"
+                [placeholder]="''"
+                [autocomplete]="true">
+              </ibm-label>
+            </div>
+          </div>
+            <div fxFlex="20%" fxFlex.gt-md="20%">
+              <div class="box-select">
+                <div class="span">Rol</div>
+                <ibm-combo-box
+                  style="width:100%"
+                  [placeholder]="'Seleccionar...'"
+                  [items]="companyList"
+                  (selected)="selectedCompany($event)"
+                  size="md"
+                  [appendInline]="false">
+                  <ibm-dropdown-list></ibm-dropdown-list>
+                </ibm-combo-box>
+              </div>
+            </div>
+            <div fxFlex="20%" fxFlex.gt-md="20%">
+              <div class="box-select">
+                <div class="span">Compañía</div>
+                <ibm-combo-box
+                  style="width:100%"
+                  [placeholder]="'Seleccionar...'"
+                  [items]="companyList"
+                  (selected)="selectedCompany($event)"
+                  size="md"
+                  [appendInline]="false">
+                  <ibm-dropdown-list></ibm-dropdown-list>
+                </ibm-combo-box>
+              </div>
+            </div>
+       
+            </div> -->
+          </div>
+        </div>
+ 
+      </div>
+     
+    </div>
+    <div fxFlex="100%" fxFlex.gt-md="100%" class="app-card-row">
       <div class="app-productive-heading-02 px-4">Lista de usuarios de la compañía</div>
       <div fxLayout="row wrap" class="mb-12">
         <div fxFlex="100%" fxFlex.gt-md="100%">
@@ -16,13 +83,17 @@
               <div class="table-header">
                 <div class="title-header">Nombre</div>
                 <div class="title-header">Email</div>
+                <div class="title-header">Rol</div>
                 <div class="title-header">#</div>
               </div>
               <div class="table-body" *ngFor="let usuario of listaUsuarios">
                 <div class="title-body">{{usuario.name}} {{usuario.surname}}</div>
                 <div class="title-body">{{usuario.email}}</div>
+                <div class="title-body">{{usuario.user_type_id.name}}</div>
                 <div class="title-body">
                   <button (click)="borrarUsuario(usuario._id)">Borrar </button>
+                  <button class="modify" (click)="editarCompania(company._id)">Modificar </button>
+
                 </div>
               </div>
             </div>

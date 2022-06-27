@@ -10,13 +10,18 @@ import { AppComponentService } from 'src/app/app.component.service';
 export class FormsGeneralComponent implements OnInit {
   public listaUsuarios: any;
   public loading: boolean;
-
+  public companyList = [
+  {content: "1"}
+  ]
+  public showModal: boolean;
   constructor(private service: AppComponentService,private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.obtenerUsuariosPorCompania();
   }
-
+  modal(event){
+    this.showModal = event
+  }
 
   obtenerUsuariosPorCompania(){
     this.loading = true;
@@ -33,7 +38,7 @@ export class FormsGeneralComponent implements OnInit {
   }
   borrarUsuario(id){
     let idUsuarioLogueado = localStorage.getItem('id');
-    
+
     if(id == idUsuarioLogueado){
       this.toast("No puedes borrarte tu mismo.", 5000);
       return;

@@ -1,0 +1,174 @@
+[
+    {
+        "codigo": 1,
+        "nombre": "FACTURAS A"
+    },
+    {
+        "codigo": 2,
+        "nombre": "NOTAS DE DEBITO A"
+    },
+    {
+        "codigo": 3,
+        "nombre": "NOTAS DE CREDITO A"
+    },
+    {
+        "codigo": 4,
+        "nombre": "RECIBOS A"
+    },
+    {
+        "codigo": 5,
+        "nombre": "NOTAS DE VENTA AL CONTADO A"
+    },
+    {
+        "codigo": 6,
+        "nombre": "FACTURAS B"
+    },
+    {
+        "codigo": 7,
+        "nombre": "NOTAS DE DEBITO B"
+    },
+    {
+        "codigo": 8,
+        "nombre": "NOTAS DE CREDITO B"
+    },
+    {
+        "codigo": 9,
+        "nombre": "RECIBOS B"
+    },
+    {
+        "codigo": 10,
+        "nombre": "NOTAS DE VENTA AL CONTADO B"
+    },
+    {
+        "codigo": 11,
+        "nombre": "FACTURAS C"
+    },
+    {
+        "codigo": 12,
+        "nombre": "NOTAS DE DEBITO C"
+    },
+    {
+        "codigo": 13,
+        "nombre": "NOTAS DE CREDITO C"
+    },
+    {
+        "codigo": 14,
+        "nombre": "RECIBOS C"
+    },
+    {
+        "codigo": 15,
+        "nombre": "RECIBOS C"
+    },
+    {
+        "codigo": 16,
+        "nombre": "NOTAS DE VENTA AL CONTADO C"
+    },
+    {
+        "codigo": 19,
+        "nombre": "FACTURAS DE EXPORTACION"
+    },
+    {
+        "codigo": 20,
+        "nombre": "NOTAS DE DEBITO POR OPERACIONES CON EL EXTERIOR"
+    },
+    {
+        "codigo": 21,
+        "nombre": "NOTAS DE CREDITO POR OPERACIONES CON EL EXTERIOR"
+    },
+    {
+        "codigo": 22,
+        "nombre": "FACTURAS - PERMISO EXPORTACION SIMPLIFICADO - DTO. 855/97"
+    },
+    {
+        "codigo": 81,
+        "nombre": "TIQUE FACTURA A"
+    },
+    {
+        "codigo": 82,
+        "nombre": "TIQUE FACTURA B"
+    },
+    {
+        "codigo": 83,
+        "nombre": "TIQUE"
+    },
+    {
+        "codigo": 110,
+        "nombre": "TIQUE NOTA DE CREDITO"
+    },
+    {
+        "codigo": 111,
+        "nombre": "TIQUE FACTURA C"
+    },
+    {
+        "codigo": 112,
+        "nombre": "TIQUE NOTA DE CREDITO A"
+    },
+    {
+        "codigo": 113,
+        "nombre": "TIQUE NOTA DE CREDITO B"
+    },
+    {
+        "codigo": 114,
+        "nombre": "TIQUE NOTA DE CREDITO C"
+    },
+    {
+        "codigo": 115,
+        "nombre": "TIQUE NOTA DE DEBITO A"
+    },
+    {
+        "codigo": 116,
+        "nombre": "TIQUE NOTA DE DEBITO B"
+    },
+    {
+        "codigo": 117,
+        "nombre": "TIQUE NOTA DE DEBITO C"
+    },
+    {
+        "codigo": 118,
+        "nombre": "TIQUE FACTURA M"
+    },
+    {
+        "codigo": 119,
+        "nombre": "TIQUE NOTA DE CREDITO M"
+    },
+    {
+        "codigo": 120,
+        "nombre": "TIQUE NOTA DE DEBITO M"
+    },
+    {
+        "codigo": 201,
+        "nombre": "FACTURA DE CRÉDITO ELECTRÓNICA MiPyMEs (FCE) A"
+    },
+    {
+        "codigo": 202,
+        "nombre": "NOTA DE DEBITO ELECTRÓNICA MiPyMEs (FCE) A"
+    },
+    {
+        "codigo": 203,
+        "nombre": "NOTA DE CREDITO ELECTRÓNICA MiPyMEs (FCE) A"
+    },
+    {
+        "codigo": 206,
+        "nombre": "FACTURA DE CRÉDITO ELECTRÓNICA MiPyMEs (FCE) B"
+    },
+    {
+        "codigo": 207,
+        "nombre": "NOTA DE DEBITO ELECTRÓNICA MiPyMEs (FCE) B"
+    },
+    {
+        "codigo": 208,
+        "nombre": "NOTA DE CREDITO ELECTRÓNICA MiPyMEs (FCE) B"
+    },
+    {
+        "codigo": 211,
+        "nombre": "FACTURA DE CRÉDITO ELECTRÓNICA MiPyMEs (FCE) C"
+    },
+    {
+        "codigo": 212,
+        "nombre": "NOTA DE DEBITO ELECTRÓNICA MiPyMEs (FCE) C"
+    },
+    {
+        "codigo": 213,
+        "nombre": "NOTA DE CREDITO ELECTRÓNICA MiPyMEs (FCE) C"
+    }
+]

@@ -25,6 +25,9 @@ export class AuthService {
   public obtenerCompanias(){
     return this.http.get(this.urlBackend + `company`, this.httpOptions);
   }
+  public obtenerRoles(){
+    return this.http.get(this.urlBackend + `userTypes`, this.httpOptions);
+  }
   public login(body){
     return this.http.post(this.urlBackend + `users/login`, body, this.httpOptions);
   }

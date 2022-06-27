@@ -54,10 +54,10 @@
 }
 .box-header-card{
     display: flex;
-    justify-content: space-between;
 }
 .botonera{
     display: flex;
+    margin-left: 20px;
 }
 .botonera small{
     padding: 1px 10px;
@@ -75,10 +75,11 @@
 }
 .box-dia{
     width: 44px;
+    height: 28px;
     overflow: hidden;
     position: absolute;
     z-index: 1;
-    opacity: .2;
+    opacity: 0;
     cursor: pointer;
 }
 .box-loading{
@@ -95,4 +96,14 @@
 }
 .box-loading img{
     width: 40px;
+}
+.box-title-header{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1600px) {
+    .box-fetch{
+        flex-direction: column;
+    }
 }

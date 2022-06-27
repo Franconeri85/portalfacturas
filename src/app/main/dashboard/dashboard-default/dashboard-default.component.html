@@ -7,16 +7,7 @@
   <ng-scrollbar>
 
     <div fxLayout="row wrap" class="app-header app-header--hero">
-      <!-- <div class="app_header__tools">
-        <button ibmButton="primary" size="sm" class="mr-1">
-          Invoices
-        </button>
-        <button ibmButton="tertiary" size="sm" fxHide fxShow.gt-sm>
-          Schedule
-          <svg class="bx--btn__icon" ibmIconAdd size="20"></svg>
-        </button>
-      </div> -->
-      <div fxFlex="100%" fxFlex.gt-sm="50%" class="relative z-10">
+      <div fxFlex="100%" fxFlex.gt-sm="50%" class="relative z-10 box-title-header">
         <div class="app-subtitle text-muted">
           <!-- OVERVIEW -->
         </div>
@@ -25,28 +16,20 @@
           <!-- <span class="app-expressive-heading-03">[ the startup company platform ]</span> -->
         </div>
       </div>
-    </div>
-    <!-- <div fxLayout="row wrap flex-column" class="mx-4">
-      <div fxFlex="100%" fxFlex.gt-sm="50%" class="mt-4">
-        <ibm-combo-box
-          style="width:200px"
-          [placeholder]="'Filter group...'"
-          [items]="comboboxItems"
-          size="md"
-          [appendInline]="false">
-          <ibm-dropdown-list></ibm-dropdown-list>
-        </ibm-combo-box>
-      </div>
-      <div fxFlex="100%" fxFlex.gt-sm="50%" class="mt-4">
-        <div class="text-left lg:text-right">
-          <span class="app-label-01 mr-3">Date range</span>
-          <ibm-date-picker
-            class="app-inline-block"
-            size="md" range="true">
-          </ibm-date-picker>
+      <div fxFlex="50%" fxFlex.gt-lg="50%">
+        <div class="app-card card-afip" fxFlex>
+          <div class="app-card__header">
+            <div class="app-row app-row--center">
+              <div class="flex">
+                <div class="app-expressive-heading-03 mb-8"><b>Estado AFIP</b></div>
+                <youpez-ibm-icon *ngIf="data && data.tablero" [iconName]="data.tablero.AFIP == 'UP' ? 'arrowUp' : 'arrowDown'" [class]="data.tablero.AFIP == 'UP' ? 'app-color-success icon-afip' : 'app-color-danger icon-afip'"></youpez-ibm-icon>
+                <!-- <div class="app-label-01 app-color-success">Today: +1,233</div> -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div> -->
+    </div>
     
     <div fxLayout="row wrap" class="app-card-row-holder">
       <div fxFlex="100%" fxFlex.gt-md="100%" fxFlex.gt-lg="100%">
@@ -186,47 +169,7 @@
 
       <div fxFlex="100%">
         <div fxLayout="row wrap">
-          <div fxFlex="50%" fxFlex.gt-md="50%">
-            <div class="app-card  app-card-padding">
-              <div class="app-card__tool app-card__tool--sign">
-                <div class="app-card__tool__sign app-card__tool__sign--warning"></div>
-              </div>
-              <div class="app-card__header">
-                <div class="app-expressive-heading-02 box-header-card">
-                  Cantidad
-                  <div class="botonera" >
-                  <ibm-date-picker
-                      class="box-dia"
-                      formControlName="single"
-                      invalidText="Formato de fecha inválido"
-                      (valueChange)="obtenerDiaActual($event)">
-                  </ibm-date-picker>
-                    <small  (click)="discrimineDataChart('dia')">Dia</small>
-                    <small  (click)="discrimineDataChart('mes')">Mes</small>        
-                  </div>
-                </div>
-                <div class="app-label-01">Descripción..</div>
-              </div>
-              <youpez-echarts-container>
-                <youpez-echarts [options]="chartOptionsStatics2" class="app-echarts-component"
-                             style="height: 500px;"></youpez-echarts>
-              </youpez-echarts-container>
-              <!-- <div class="box-checkbox">
-                <div class="bx--form-item bx--checkbox-wrapper">
-                  <ibm-checkbox checked="true">PDF</ibm-checkbox>
-                </div>
-                <div class="bx--form-item bx--checkbox-wrapper">
-                  <ibm-checkbox>CAE</ibm-checkbox>
-                </div>
-                <div class="bx--form-item bx--checkbox-wrapper">
-                  <ibm-checkbox>MAIL</ibm-checkbox>
-                </div>
-                <div class="bx--form-item bx--checkbox-wrapper">
-                  <ibm-checkbox>OTROS</ibm-checkbox>
-                </div>
-              </div> -->
-            </div>
-          </div>
+         
   
           <div fxFlex="100%" fxFlex.gt-md="50%" >
             <div class="app-card">
@@ -235,13 +178,13 @@
               </div>
               <div class="app-card__header">
                 <div class="app-expressive-heading-02 box-header-card">
-                  Velocidad
+                  Cantidad
                   <div class="botonera" >
                     <small (click)="discrimineDataChart('dia')">Dia</small>
                     <small (click)="discrimineDataChart('month')">Mes</small>        
                   </div>
                 </div>
-                <div class="app-label-01">Descripción..</div>
+                <!-- <div class="app-label-01">Descripción..</div> -->
               </div>
               <youpez-echarts-container>
                 <youpez-echarts [options]="chartOptionsStatics" class="app-echarts-component"
@@ -249,7 +192,33 @@
               </youpez-echarts-container>
             </div>
           </div>
-
+          <div fxFlex="50%" fxFlex.gt-md="50%">
+            <div class="app-card  app-card-padding">
+              <div class="app-card__tool app-card__tool--sign">
+                <div class="app-card__tool__sign app-card__tool__sign--warning"></div>
+              </div>
+              <div class="app-card__header">
+                <div class="app-expressive-heading-02 box-header-card">
+                  Velocidad
+                  <div class="botonera" >
+                  <ibm-date-picker
+                      class="box-dia"
+                      formControlName="single"
+                      invalidText="Formato de fecha inválido"
+                      (valueChange)="obtenerDiaActual($event, true)">
+                  </ibm-date-picker>
+                    <small  (click)="discrimineDataChart('dia')">Dia</small>
+                    <small  (click)="discrimineDataChart('mes')">Mes</small>        
+                  </div>
+                </div>
+                <!-- <div class="app-label-01">Descripción..</div> -->
+              </div>
+              <youpez-echarts-container>
+                <youpez-echarts [options]="chartOptionsStatics2" class="app-echarts-component"
+                             style="height: 500px;"></youpez-echarts>
+              </youpez-echarts-container>
+            </div>
+          </div>
           <div fxFlex="50%" fxFlex.gt-lg="50%">
             <div class="app-card" fxFlex>
               <!-- <div class="app-card__tool">
@@ -276,27 +245,7 @@
               </div>
             </div>
           </div>
-          <div fxFlex="50%" fxFlex.gt-lg="50%">
-            <div class="app-card card-afip" fxFlex>
-              <!-- <div class="app-card__tool">
-                <button ibmButton="tertiary" size="sm" class="bx--btn--icon-only">
-                  <svg class="bx--btn__icon" ibmIconRenew size="32"></svg>
-                </button>
-                <button ibmButton="tertiary" size="sm" class="bx--btn--icon-only">
-                  <svg class="bx--btn__icon" ibmIconOverflowMenuVertical size="32"></svg>
-                </button>
-              </div> -->
-              <div class="app-card__header">
-                <div class="app-row app-row--center">
-                  <div class="flex">
-                    <div class="app-expressive-heading-03 mb-8"><b>Estado AFIP</b></div>
-                    <youpez-ibm-icon iconName="arrowUp" class="app-color-success icon-afip"></youpez-ibm-icon>
-                    <!-- <div class="app-label-01 app-color-success">Today: +1,233</div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    
         </div>
       </div>
 

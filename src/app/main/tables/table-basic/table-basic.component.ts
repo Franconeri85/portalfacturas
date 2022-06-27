@@ -36,7 +36,7 @@ export class TableBasicComponent implements OnInit {
       content: "Item"
     }
   ]
-
+  puntoVenta:any;
   //Datos de la tabla
   tablaRegistros:TableModel;
   @ViewChild("proficiencyTemplate", {static: true}) proficiencyTemplate: TemplateRef<any>
@@ -45,7 +45,6 @@ export class TableBasicComponent implements OnInit {
 
   ngOnInit(): void {
    
-    this.obtenerComprobantes();
   }
 
   obtenerComprobantes(){
@@ -56,17 +55,21 @@ export class TableBasicComponent implements OnInit {
         let registros = [];
 
         res.registros.forEach(i => {
-          let [tipoDoc, numeroDoc] = i[1].stringValue.split('#');
+          var year = i[6].stringValue.substring(0, 4);
+          var month = i[6].stringValue.substring(4, 6);
+          var day = i[6].stringValue.substring(6, 8);
           registros.push({
-            fecha: i[6].stringValue,
-            cuit: numeroDoc,
+            id: i[1].longValue,
+            cuit: i[3].longValue,
+            entorno:  i[4].stringValue,
+            ws:  i[5].stringValue,
+            fecha: `${day}/${month}/${year}`,
             tipoFactura: 'Factura '+ i[18].stringValue,
             importe: i[12].stringValue,
             caeCai: i[17].stringValue
           })
         });
         this.tablaRegistros = this.cargarTabla(registros);
-
       }
     )
   }

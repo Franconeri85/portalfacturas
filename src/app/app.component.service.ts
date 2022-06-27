@@ -24,7 +24,7 @@ export class AppComponentService {
   obtenerTablero(entorno, webservice, compania, year, month ){
 
     //return this.http.get('assets/response.json', this.httpOptions);
-    return this.http.get(this.urlBackend + `/tablero?entorno=${entorno}&cuit=30711727074&webservice=${webservice}&fecha=${year}${month}01`, this.httpOptions);
+    return this.http.get(this.urlBackend + `/tablero?entorno=${entorno}&cuit=${compania}&webservice=${webservice}&fecha=${year}${month}01`, this.httpOptions);
 
   }
   getData(){

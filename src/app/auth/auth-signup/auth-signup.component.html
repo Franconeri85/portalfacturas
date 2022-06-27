@@ -1,8 +1,8 @@
 <div class="mb-8" fxHide fxShow.lt-md>
   <youpez-logo class="cursor-pointer" logoWidth="130px"></youpez-logo>
 </div>
-<h1 class="app-expressive-heading-06 mb-1">Registrarse</h1>
-<div class="app-body-long-02 mb-8">
+<h1 class="app-expressive-heading-06 mb-1" *ngIf="esRegistro">Registrarse</h1>
+<div class="app-body-long-02 mb-8"  *ngIf="esRegistro">
   ¿Ya tiene una cuenta?
   <a ibmLink routerLink="../signin">Ingresar</a>
 </div>
@@ -102,6 +102,18 @@
       </ibm-label>
     </div>
     <div class="box-select">
+      <label class="span">Rol</label>
+      <ibm-combo-box
+        style="width:100%"
+        [placeholder]="'Seleccionar...'"
+        [items]="rolList"
+        (selected)="selectedRol($event)"
+        size="md"
+        [appendInline]="false">
+        <ibm-dropdown-list></ibm-dropdown-list>
+      </ibm-combo-box>
+    </div>
+    <div class="box-select">
       <label class="span">Compañía</label>
       <ibm-combo-box
         style="width:100%"
@@ -122,8 +134,11 @@
       </div> -->
     </div>
     <div class="app-form__submit">
+      <button class="app-ibm-btn-full" (click)="cerrar()" ibmButton="secondary" size="field">
+        Cancelar
+      </button>
       <button type="submit" class="app-ibm-btn-full" ibmButton="primary" size="field">
-        Crear cuenta
+        Agregar usuario
         <svg class="bx--btn__icon" ibmIconArrowRight size="20"></svg>
       </button>
     </div>

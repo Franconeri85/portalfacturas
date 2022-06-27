@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core'
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core'
 import {FormBuilder, FormGroup, Validators} from "@angular/forms"
 import {Router} from "@angular/router"
 import {NotificationService} from "carbon-components-angular"
@@ -12,13 +12,18 @@ import { UsuarioModel } from '../../main/models/usuario.model';
 })
 export class AuthSignupComponent implements OnInit {
 
+  @Input() esRegistro:boolean = true;
+  @Output() refresh: EventEmitter<boolean> = new EventEmitter();
+  @Output() cerrarModal: EventEmitter<boolean> = new EventEmitter();
   public formGroup: FormGroup;
   public companyList = [
     {
       content: "South Trade Network"
     }
   ]
+  public rolList: any;
   public companySelected: any;
+  public rolSelected: any;
   constructor(protected formBuilder: FormBuilder,
               private router: Router,
               private service: AuthService,
@@ -26,6 +31,7 @@ export class AuthSignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.obtenerRoles();
     this.obtenerCompañias();
     this.formGroup = this.formBuilder.group({
       name: ['', [Validators.required,]],
@@ -40,13 +46,22 @@ export class AuthSignupComponent implements OnInit {
   selectedCompany(e){
     this.companySelected = e.item._id;
   }
+  selectedRol(e){
+    this.rolSelected = e.item._id;
+  }
+  cerrar(){
+    this.cerrarModal.emit(false);
+  }
   onSubmit() {
-    debugger
     this.formGroup.markAllAsTouched();
     console.log(this.formGroup.value);
 
+    if(!this.rolSelected){
+      this.toast("error", "Algo anda mal", "Debe elegir un rol.");
+      return;
+    }
     if(!this.companySelected){
-      this.toast("error", "Algo anda mal", "Debe elegir una compañía");
+      this.toast("error", "Algo anda mal", "Debe elegir una compañía.");
       return;
     }
 
@@ -58,10 +73,13 @@ export class AuthSignupComponent implements OnInit {
     body.phone = this.formGroup.value.phone;
     body.password = this.formGroup.value.password;
     body.company = this.companySelected;
-    body.user_type_id = "62a1753bdd9e5049c0dd831f";
+    body.user_type_id = this.rolSelected;
     this.service.guardarUsuario(body).subscribe(res => {
       this.toast("success", "Exito", "Se registró el usuario correctamente");
-      this.router.navigate(['/auth/basic/signin']);
+      if(this.esRegistro)
+        this.router.navigate(['/auth/basic/signin']);
+      else
+        this.refresh.emit(true)
     },
     err => {
       this.toast("error", "Algo anda mal", err.error.message);
@@ -96,7 +114,20 @@ export class AuthSignupComponent implements OnInit {
     })
     
   }
-
+  obtenerRoles(){
+    this.service.obtenerRoles().subscribe( (res:any) => {
+      var output = res.map( s => {
+        if ( s.hasOwnProperty("name") )
+        {
+           s.content = s.name;
+           delete s.name;   
+        }
+        return s;
+      });
+      this.rolList = output;
+    })
+    
+  }
   isValid(name) {
     const instance = this.formGroup.get(name)
     return instance.invalid && (instance.dirty || instance.touched)
