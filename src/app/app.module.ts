@@ -27,6 +27,18 @@ import {AppEffects} from './store/app.effects'
 import {AppComponentService} from './app.component.service'
 import {LoadingComponent} from './main/loading/loading.component'
 
+import Amplify, {Auth} from 'aws-amplify'
+import { FormsModule } from '@angular/forms'
+
+Amplify.configure({
+  Auth:{
+    mandatorySignIn: true,
+    region: 'us-east-1',
+    userPoolId: 'us-east-1_HIuvAgQLq',
+    userPoolWebClientId: '4ovgsi6201duj2jmm307mop3g3',
+    authenticationFlowType: 'USER_PASSWORD_AUTH'
+  }
+})
 
 @NgModule({
   declarations: [
@@ -36,6 +48,7 @@ import {LoadingComponent} from './main/loading/loading.component'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     FlexLayoutModule,
     CoreModule,

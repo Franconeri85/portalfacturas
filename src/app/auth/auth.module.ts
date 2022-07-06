@@ -12,7 +12,10 @@ import {AuthBookADemoComponent} from './auth-book-a-demo/auth-book-a-demo.compon
 import {ComingSoonComponent} from "./coming-soon/coming-soon.component"
 import { AuthService } from "./auth.service";
 import { AppComponentService } from '../app.component.service'
+import Amplify from "@aws-amplify/core"
+import awsConfig from "../../aws-exports";
 
+Amplify.configure(awsConfig);
 @NgModule({
   declarations: [
     AuthLoginComponent,

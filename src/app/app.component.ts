@@ -64,13 +64,13 @@ export class AppComponent implements OnInit {
     })
   }
   checkToken(){
-      this.service.obtenerTokenValido().subscribe(res =>{
-        if(!res)
-          this.router.navigate(['/auth/basic/signin']);
-      },
-      err =>{
-        this.router.navigate(['/auth/basic/signin']);
-      })
+      // this.service.obtenerTokenValido().subscribe(res =>{
+      //   if(!res)
+      //     this.router.navigate(['/auth/basic/signin']);
+      // },
+      // err =>{
+      //   this.router.navigate(['/auth/basic/signin']);
+      // })
   }
   
 }

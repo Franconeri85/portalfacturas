@@ -10,6 +10,29 @@
       "StackName": "amplify-portalfacturas-dev-234434",
       "StackId": "arn:aws:cloudformation:us-east-1:303303306861:stack/amplify-portalfacturas-dev-234434/f09737a0-e6d4-11ec-8d74-0aac1f1b8ceb",
       "AmplifyAppId": "d3qrjlv81h9hv5"
+    },
+    "categories": {
+      "auth": {
+        "portalfacturasa0db1ca9": {}
+      }
+    }
+  },
+  "facturas": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-portalfacturas-facturas-204012-authRole",
+      "UnauthRoleArn": "arn:aws:iam::303303306861:role/amplify-portalfacturas-facturas-204012-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::303303306861:role/amplify-portalfacturas-facturas-204012-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-portalfacturas-facturas-204012-deployment",
+      "UnauthRoleName": "amplify-portalfacturas-facturas-204012-unauthRole",
+      "StackName": "amplify-portalfacturas-facturas-204012",
+      "StackId": "arn:aws:cloudformation:us-east-1:303303306861:stack/amplify-portalfacturas-facturas-204012/d29f1e50-fcbb-11ec-a805-0eb31b0a72ad",
+      "AmplifyAppId": "d7due1wspjku7"
+    },
+    "categories": {
+      "auth": {
+        "portalfacturasd9d61f76": {}
+      }
     }
   }
 }

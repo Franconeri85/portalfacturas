@@ -54,8 +54,27 @@ export class AuthLoginComponent implements OnInit {
 
     try{
       debugger
-      var user = await Auth.signIn(this.formGroup.value.email, this.formGroup.value.password);
-      var tokens = user.signInUserSession;
+      // var _user:any = await Auth.signIn(this.formGroup.value.email.toString(), this.formGroup.value.password.toString());
+      var _user:any = await Auth.signIn(this.formGroup.value.email, this.formGroup.value.password)
+      
+      var tokens = _user.signInUserSession;
+      localStorage.setItem('name',_user.attributes.given_name);
+      localStorage.setItem('surname',_user.attributes.family_name);
+
+      let user = Auth.currentUserInfo();
+      console.log(user);
+      // {
+      //   "username": "...",
+      //   "attributes": {
+      //     "sub": "...",
+      //     "email_verified": true,
+      //     "phone_number_verified": true,
+      //     "phone_number": "...",
+      //     "email": "..."
+      //   }
+      // }
+      // var tokens = user.signInUserSession;
+      this.loading = false;
       
       if( tokens != null ) {
         console.log('Usuario autenticado');
@@ -63,7 +82,9 @@ export class AuthLoginComponent implements OnInit {
       }
 
     }catch (error){
+      this.loading = false;
       console.log(error);
+      this.toast("error","Error al iniciar sesión", error.message)
     }
     // this.service.login({email: this.formGroup.value.email, password: this.formGroup.value.password}).subscribe( (res: any) =>{
     //   this.loading = false;
