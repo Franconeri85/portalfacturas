@@ -93,8 +93,7 @@ export class AuthSignupComponent implements OnInit {
       attributes: {
         email: body.email,
         given_name: body.name,
-        family_name:  body.surname,
-        rol: 'custom:'+this.rolSelected
+        family_name:  body.surname
       },
     
     })
