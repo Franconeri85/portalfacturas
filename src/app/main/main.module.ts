@@ -74,6 +74,8 @@ import { StarterApplicationBasicComponent } from './starters/application/starter
 import { StarterApplicationAdvancedComponent } from './starters/application/starter-application-advanced/starter-application-advanced.component';
 import { StarterApplicationComplexComponent } from './starters/application/starter-application-complex/starter-application-complex.component'
 import { AuthModule } from '../auth/auth.module'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { BrowserModule } from '@angular/platform-browser'
 
 @NgModule({
   declarations: [
@@ -149,10 +151,12 @@ import { AuthModule } from '../auth/auth.module'
     MainRoutingModule,
     LayoutModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     ChartsModule,
     AuthModule,
     AgGridModule.withComponents([]),
-  ]
+  ],
 })
 export class MainModule {
 }

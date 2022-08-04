@@ -8,7 +8,7 @@ import { AppComponentService } from 'src/app/app.component.service';
   styleUrls: ['./forms-validation.component.css']
 })
 export class FormsValidationComponent implements OnInit {
-  public listaCompanias: any;
+  public listaCompanias = [];
   public loading: boolean;
 
   constructor(private service: AppComponentService,private notificationService: NotificationService) { }
@@ -19,10 +19,18 @@ export class FormsValidationComponent implements OnInit {
 
   obtenerCompanias(){
     this.loading = true;
-    this.service.obtenerCompanias().subscribe((res:any)=>{
+    this.service.obtenerClientes().subscribe((res:any)=>{
       this.loading = false;
 
-      this.listaCompanias = res;
+      if(res.clientes){
+        res.clientes.forEach(cliente => {
+          this.listaCompanias.push({
+            cuit: cliente.SK,
+            nombre: cliente.rs
+          });
+          
+        });
+      }
       
     },
     err =>{

@@ -413,6 +413,7 @@ export class DashboardDefaultComponent implements OnInit {
   }
 
   discrimineDataChartVelocidad(rango){
+    debugger
     let key = Object.keys(this.data.tablero)[0];
     let [entorno, ws, year, month] = key.split('-');
     let dataDias = this.data.tablero[key].dias;
@@ -459,10 +460,11 @@ export class DashboardDefaultComponent implements OnInit {
       else
         this.chartVelocidadMAIL.push({fecha: fecha, data: 0})
       
+      var index = i;
       Object.keys(dia[i]).forEach(e => {
         if(e != 'PDF' && e != 'CAE' && e != 'MAIL' && e != 'horas'){
-          if(dia[i].e){
-            this.chartVelocidadOTRO.push({fecha: fecha, data: dia[i].e.tiempoPromedio})
+          if(dia[index].e){
+            this.chartVelocidadOTRO.push({fecha: fecha, data: dia[index].e.tiempoPromedio})
           }else{
             this.chartVelocidadOTRO.push({fecha: fecha, data: 0})
           }

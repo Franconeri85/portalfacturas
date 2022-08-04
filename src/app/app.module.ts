@@ -28,7 +28,7 @@ import {AppComponentService} from './app.component.service'
 import {LoadingComponent} from './main/loading/loading.component'
 
 import Amplify, {Auth} from 'aws-amplify'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 Amplify.configure({
   Auth:{
@@ -43,12 +43,13 @@ Amplify.configure({
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingComponent
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
     CoreModule,

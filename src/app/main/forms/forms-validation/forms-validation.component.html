@@ -15,14 +15,12 @@
 
               <div class="table-header">
                 <div class="title-header">Nombre</div>
-                <div class="title-header">#</div>
+                <div class="title-header">CUIT</div>
               </div>
               <div class="table-body" *ngFor="let company of listaCompanias">
-                <div class="title-body">{{company.name}}</div>
-                <div class="title-body">
-                  <button (click)="borrarCompania(company._id)">Borrar </button>
-                  <button class="modify" (click)="editarCompania(company._id)">Modificar </button>
-                </div>
+                <div class="title-body">{{company.nombre}}</div>
+                <div class="title-body">{{company.cuit}}</div>
+     
               </div>
             </div>
           </div>

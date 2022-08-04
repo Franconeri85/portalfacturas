@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 export class AuthService {
   
-  urlBackend: string = "http://localhost:5000/api/";
+  urlBackend: string = "https://cxx6ga8e8b.execute-api.us-west-2.amazonaws.com/Dev/";
   httpOptions;
   public $callbackClick = new Subject()
 
@@ -30,5 +30,12 @@ export class AuthService {
   }
   public login(body){
     return this.http.post(this.urlBackend + `users/login`, body, this.httpOptions);
+  }
+
+  public createUser(body){
+    return this.http.post(this.urlBackend + 'usuarios/', body, this.httpOptions)
+  }
+  public getUser(user){
+    return this.http.get(this.urlBackend + 'usuarios/'+user, this.httpOptions)
   }
 }

@@ -14,8 +14,9 @@
                 <ibm-combo-box
                   style="width:100%"
                   [placeholder]="'Seleccionar...'"
-                  [items]="array"
+                  [items]="tiposComprobantes"
                   size="md"
+              
                   [appendInline]="false">
                   <ibm-dropdown-list></ibm-dropdown-list>
                 </ibm-combo-box>
@@ -30,6 +31,7 @@
                   [size]="'sm'"
                   [invalid]="false"
                   [disabled]="false"
+                  [(ngModel)]="nroComprobante"
                   theme="light"
                   [placeholder]="''"
                   [autocomplete]="true">
@@ -46,6 +48,7 @@
                     [size]="'sm'"
                     [invalid]="false"
                     [disabled]="false"
+                    [(ngModel)]="cuitEmisor"
                     theme="light"
                     [placeholder]="''"
                     [autocomplete]="true">
@@ -56,7 +59,7 @@
                 <ibm-combo-box
                   style="width:100%"
                   [placeholder]="'Seleccionar...'"
-                  [items]="array"
+                  [items]="tipoDocumentos"
                   size="md"
                   [appendInline]="false">
                   <ibm-dropdown-list></ibm-dropdown-list>
@@ -72,6 +75,7 @@
                   [size]="'sm'"
                   [invalid]="false"
                   [disabled]="false"
+                  [(ngModel)]="nroDocumento"
                   theme="light"
                   [placeholder]="''"
                   [autocomplete]="true">
@@ -87,6 +91,7 @@
                   [size]="'sm'"
                   [invalid]="false"
                   [disabled]="false"
+                  [(ngModel)]="razonSocial"
                   theme="light"
                   [placeholder]="''"
                   [autocomplete]="true">
@@ -102,6 +107,7 @@
                     [size]="'sm'"
                     [invalid]="false"
                     [disabled]="false"
+                    [(ngModel)]="puntoVenta"
                     theme="light"
                     [placeholder]="''"
                     type="number"
@@ -117,6 +123,12 @@
                 </ibm-date-picker>
               </div>
               <div class="box-select box-btn">
+                <div class="btn-consultar">
+                  <button (click)="limpiar()" class="btn2">Limpiar</button>
+                </div>
+                <div class="btn-consultar">
+                  <button (click)="exportar()" class="btn2">Exportar</button>
+                </div>
                 <div class="btn-consultar">
                   <button (click)="obtenerComprobantes()">Buscar</button>
                 </div>

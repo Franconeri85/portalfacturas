@@ -15,8 +15,10 @@ import {AuthResetPasswordComponent} from "./auth-reset-password/auth-reset-passw
 import {AuthConfirmationComponent} from "./auth-confirmation/auth-confirmation.component"
 import {AuthBookADemoComponent} from "./auth-book-a-demo/auth-book-a-demo.component"
 import {ComingSoonComponent} from "./coming-soon/coming-soon.component"
+import { ConfirmationComponent } from './confirmation/confirmation.component'
 
 const routes: Routes = [
+
   {
     path: 'modern',
     component: AppLayoutDividedComponent,
@@ -95,6 +97,7 @@ const routes: Routes = [
       },
     ],
   },
+ 
   {
     path: 'basic',
     component: AppLayoutBasicComponent,
@@ -102,6 +105,10 @@ const routes: Routes = [
       {
         path: 'signin',
         component: AuthLoginComponent,
+      }, 
+      {
+        path: 'confirmacion',
+        component: ConfirmationComponent
       },
       {
         path: 'signup',

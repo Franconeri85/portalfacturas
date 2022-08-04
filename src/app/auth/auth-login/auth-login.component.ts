@@ -56,10 +56,12 @@ export class AuthLoginComponent implements OnInit {
       debugger
       // var _user:any = await Auth.signIn(this.formGroup.value.email.toString(), this.formGroup.value.password.toString());
       var _user:any = await Auth.signIn(this.formGroup.value.email, this.formGroup.value.password)
-      
+      debugger
       var tokens = _user.signInUserSession;
       localStorage.setItem('name',_user.attributes.given_name);
       localStorage.setItem('surname',_user.attributes.family_name);
+      localStorage.setItem('email',_user.attributes.email);
+      localStorage.setItem('userId', _user.attributes.sub);
 
       let user = Auth.currentUserInfo();
       console.log(user);
@@ -78,7 +80,7 @@ export class AuthLoginComponent implements OnInit {
       
       if( tokens != null ) {
         console.log('Usuario autenticado');
-        this.router.navigate(['/app']);
+        this.router.navigate(['/auth/basic/confirmacion']);
       }
 
     }catch (error){
@@ -86,29 +88,7 @@ export class AuthLoginComponent implements OnInit {
       console.log(error);
       this.toast("error","Error al iniciar sesión", error.message)
     }
-    // this.service.login({email: this.formGroup.value.email, password: this.formGroup.value.password}).subscribe( (res: any) =>{
-    //   this.loading = false;
-    //   if(this.recordarCuenta){
-    //     localStorage.setItem('tk',res.user.token);
-    //   }else{
-    //     sessionStorage.setItem('tk',res.user.token);
-    //   }
-    
-    //   localStorage.setItem('name',res.user.name);
-    //   localStorage.setItem('rol',res.user.user_type_id.name);
-    //   localStorage.setItem('surname',res.user.surname);
-    //   localStorage.setItem('id',res.user._id);
-    //   localStorage.setItem('company',res.user.company);
 
-    //   this.router.navigate(['/app']);
-    // },
-    // err =>{
-    //   this.loading = false;
-    //   this.toast("error", "Error al iniciar sesión", err.error.message);
-    // })
-    // setTimeout(() => {
-    //   this.router.navigate(['/app'])
-    // }, 500);
   }
 
   toast(type, title, subtitle){

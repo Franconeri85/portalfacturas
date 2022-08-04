@@ -14,6 +14,8 @@ import { AuthService } from "./auth.service";
 import { AppComponentService } from '../app.component.service'
 import Amplify from "@aws-amplify/core"
 import awsConfig from "../../aws-exports";
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 Amplify.configure(awsConfig);
 @NgModule({
@@ -25,10 +27,13 @@ Amplify.configure(awsConfig);
     AuthResetPasswordComponent,
     AuthBookADemoComponent,
     ComingSoonComponent,
+    ConfirmationComponent,
   ],
   exports:[AuthSignupComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     AuthRoutingModule,
     SharedModule,
   ],

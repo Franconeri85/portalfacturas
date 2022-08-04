@@ -52,3 +52,80 @@
 .bx--btn--primary {
     background-color: #70bd96  !important;
 }
+.button-action{
+    text-align: left!important;
+    padding-left: 10px !important;
+}
+.edit{
+    background: #b76715 !important;
+    width: 110px!important;
+}
+.confirm{
+    background: #70bd96!important;
+    width: 110px!important;
+}
+
+.button-action:hover{
+    opacity: .5;
+}
+.button-x{
+    background: #b94c30!important;
+    width: 30px!important;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    float: right;
+}
+.button-x:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+.box-popup{
+    position: fixed;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .3);
+}
+.popup{
+    width: 500px;
+    padding:10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.box-input{
+    margin:4px;
+}
+.input50{
+    width: 50%;
+}
+.box-form{
+    padding-top: 20px;
+}
+.box-form .box-divisor{
+    display: flex;
+}
+.box-cuits{
+    display: flex;
+    padding: 5px;
+}
+.cuit{
+    padding: 10px;
+    background: #383431;
+    border-radius: 2px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.cuit span{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.app-form__submit {
+    width: 50% !important;
+    padding: 10px;
+    padding-left: 0px!important;
+}

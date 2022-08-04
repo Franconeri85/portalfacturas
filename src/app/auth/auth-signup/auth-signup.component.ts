@@ -84,7 +84,7 @@ export class AuthSignupComponent implements OnInit {
     body.email = this.formGroup.value.email;
     body.phone = this.formGroup.value.phone;
     body.password = this.formGroup.value.password;
-    body.company = this.companySelected;
+    // body.company = this.companySelected;
     body.user_type_id = this.rolSelected;
     debugger
     const user = Auth.signUp({

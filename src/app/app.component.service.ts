@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core'
-import {BehaviorSubject, Observable, Subject} from "rxjs"
+import {BehaviorSubject, Observable, Subject,} from "rxjs"
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { timeout} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -37,8 +38,11 @@ export class AppComponentService {
   obtenerClientes(){
     return this.http.get(this.urlBackend + 'Clientes/', this.httpOptions);
   }
-  obtenerComprobantes(){
-    return this.http.get(this.urlBackend + 'Comprobantes/?entorno=DEV&amp;webservice=wsfe&amp;cuitEmisor=30711727074&amp;ptoVta=1000&amp;fechaDesde=20220501', this.httpOptions);
+  obtenerComprobantes(body){
+    //?entorno=DEV&amp;webservice=wsfe&amp;cuitEmisor=30711727074&amp;ptoVta=1000&amp;fechaDesde=20220501
+    return this.http.get(this.urlBackend + 'Comprobantes/'+body, this.httpOptions).pipe(
+      timeout(10000)
+  );;
 
   }
 
@@ -56,15 +60,19 @@ export class AppComponentService {
   }
 
   obtenerUsuariosPorCompania(company){
-    return this.http.get(this.urlUsuarios + 'users/byCompany/'+company, this.httpOptions);
-    
+    return this.http.get(this.urlBackend + 'usuarios/', this.httpOptions);
+  }
+  obtenerCompanias(){
+    return this.http.get(this.urlUsuarios + 'Clientes/', this.httpOptions);
+  }
+  modificarUsuario(body){
+    return this.http.put(this.urlBackend + 'usuarios/'+body.userid, body, this.httpOptions);
   }
   borrarUsuario(id){
     return this.http.delete(this.urlUsuarios + 'users/'+id, this.httpOptions);
-
   }
-  obtenerCompanias(){
-    return this.http.get(this.urlUsuarios + 'company', this.httpOptions);
-    
+  obtenerUsuarios(user){
+    return this.http.get(this.urlBackend + 'usuarios'+ user, this.httpOptions);
+
   }
 }

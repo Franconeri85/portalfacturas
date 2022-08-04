@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core'
 import {CommonModule} from '@angular/common'
 import {NavigationEnd, NavigationStart, Router, RouterModule} from '@angular/router'
-import {ReactiveFormsModule} from "@angular/forms"
 import {NgxMdModule} from 'ngx-md'
 import {NgxMaskModule, IConfig} from 'ngx-mask'
 
@@ -203,7 +202,6 @@ const MainModules = [
   NgbTooltipModule,
   DragDropModule,
   A11yModule,
-  ReactiveFormsModule,
   MatDialogModule,
 ]
 
