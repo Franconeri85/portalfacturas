@@ -42,7 +42,7 @@ export class ConfirmationComponent implements OnInit {
       (response:any) =>{
         if(response.detalle[0].cuits && response.detalle[0].cuits.length > 0){
           debugger
-          localStorage.setItem('rol', "Administrador");
+          localStorage.setItem('rol', response.detalle[0].role);
           let cuits = response.detalle[0].cuits;
           if(cuits.length == 1)
             localStorage.setItem('cuits', `[${cuits}]`);
