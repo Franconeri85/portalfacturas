@@ -62,7 +62,8 @@ export class AuthSignupComponent implements OnInit {
     this.rolSelected = e.item._id;
   }
   cerrar(){
-    this.cerrarModal.emit(false);
+    this.router.navigate(['/auth/basic/signin'])
+    // this.cerrarModal.emit(false);
   }
   onSubmit() {
     this.formGroup.markAllAsTouched();
@@ -98,7 +99,7 @@ export class AuthSignupComponent implements OnInit {
     
     })
     console.log(user)
-
+    this.router.navigate(['/auth/basic/signin'])
     // this.service.guardarUsuario(body).subscribe(res => {
     //   this.toast("success", "Exito", "Se registró el usuario correctamente");
     //   if(this.esRegistro)

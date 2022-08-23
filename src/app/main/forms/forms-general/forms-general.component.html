@@ -22,6 +22,18 @@
         </div>
       </div>
     </div> -->
+    <div class="box-input" *ngIf="listaClientes && listaClientes.length > 0">
+      <div class="span">Compañía</div>
+      <ibm-combo-box
+      style="width:100%"
+      [placeholder]="'Seleccionar cliente'"
+      [items]="listaClientes"
+      (selected)="obtenerUsuariosPorCompania($event)"
+      size="md"
+      [appendInline]="false">
+      <ibm-dropdown-list></ibm-dropdown-list>
+    </ibm-combo-box>
+    </div>
     <div fxFlex="100%" fxFlex.gt-md="100%" class="app-card-row">
       <div class="app-productive-heading-02 px-4">Lista de usuarios de la compañía</div>
       <div fxLayout="row wrap" class="mb-12">

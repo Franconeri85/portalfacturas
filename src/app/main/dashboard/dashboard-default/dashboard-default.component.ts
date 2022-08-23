@@ -293,20 +293,29 @@ export class DashboardDefaultComponent implements OnInit {
 
   obtenerClientes(){
     this.loading = true;
-    this.service.obtenerClientes().subscribe(
-      clientes =>{
+
+    let clientes = JSON.parse(localStorage.getItem('cuits'));
+
+    clientes.forEach(cliente => {
+      this.service.obtenerClientes(cliente).subscribe((res:any)=>{
         this.loading = false;
-        this.listaClientes = [{
-          clientes: [
-            {
-              "SK": "30711727074",
-              "rs": "South Trade Network",
-              "PK": "CLIENTE#"
-            }
-          ]
-        }];
-      }
-    )
+        if(res && res.detalle){
+          res.detalle.forEach(i => {
+            this.listaClientes.push({content: i.rs, key: cliente})
+          });
+  
+        }
+   
+      },
+      err =>{
+        this.loading = false;
+  
+      })
+
+    });
+
+
+
 
   }
 

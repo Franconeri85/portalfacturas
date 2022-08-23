@@ -30,7 +30,7 @@ export class ConfirmationComponent implements OnInit {
       },
       err => {
         debugger
-        this.message = err.error.detalleError
+        this.message = "Espere un momento para revisar si está asociado a algún cliente."
         if(err.error.codError == 306)
           this.getUser();
 
@@ -42,13 +42,25 @@ export class ConfirmationComponent implements OnInit {
       (response:any) =>{
         if(response.detalle[0].cuits && response.detalle[0].cuits.length > 0){
           debugger
-          localStorage.setItem('rol', 'Administrador')
+          localStorage.setItem('rol', "Administrador");
+          let cuits = response.detalle[0].cuits;
+          if(cuits.length == 1)
+            localStorage.setItem('cuits', `[${cuits}]`);
+          else
+            localStorage.setItem('cuits', cuits);
+
+
           this.router.navigate(['/app']);
         }else{
           this.message = "Hay pendiente una aprobación de un administrador para poder ingresar."
         }
       }
     )
+
+  }
+  atras(){
+    debugger
+    this.router.navigate(['/auth/basic/signin'])
 
   }
 }

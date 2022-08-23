@@ -19,25 +19,31 @@ export class FormsValidationComponent implements OnInit {
 
   obtenerCompanias(){
     this.loading = true;
-    this.service.obtenerClientes().subscribe((res:any)=>{
-      this.loading = false;
+    debugger
+    let clientes = JSON.parse(localStorage.getItem('cuits'));
 
-      if(res.clientes){
-        res.clientes.forEach(cliente => {
-          this.listaCompanias.push({
-            cuit: cliente.SK,
-            nombre: cliente.rs
+    clientes.forEach(cliente => {
+      this.service.obtenerClientes(cliente).subscribe((res:any)=>{
+        this.loading = false;
+        if(res && res.detalle){
+          res.detalle.forEach(i => {
+                 this.listaCompanias.push({
+            cuit: cliente,
+            nombre: i.rs
           });
-          
-        });
-      }
-      
-    },
-    err =>{
-      this.loading = false;
+          });
+  
+        }
+   
+      },
+      err =>{
+        this.loading = false;
+  
+      })
 
-    })
+    });
   }
+  
   borrarCompania(id){
     let idCompania = localStorage.getItem('company');
     

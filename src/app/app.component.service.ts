@@ -35,8 +35,8 @@ export class AppComponentService {
     return this.http.get(this.urlUsuarios + 'users/'+id, this.httpOptions);
 
   }
-  obtenerClientes(){
-    return this.http.get(this.urlBackend + 'Clientes/', this.httpOptions);
+  obtenerClientes(cliente){
+    return this.http.get(this.urlBackend + 'Clientes/'+cliente, this.httpOptions);
   }
   obtenerComprobantes(body){
     //?entorno=DEV&amp;webservice=wsfe&amp;cuitEmisor=30711727074&amp;ptoVta=1000&amp;fechaDesde=20220501
@@ -60,7 +60,7 @@ export class AppComponentService {
   }
 
   obtenerUsuariosPorCompania(company){
-    return this.http.get(this.urlBackend + 'usuarios/', this.httpOptions);
+    return this.http.get(this.urlBackend + 'usuarios/cuit/'+company, this.httpOptions);
   }
   obtenerCompanias(){
     return this.http.get(this.urlUsuarios + 'Clientes/', this.httpOptions);

@@ -198,23 +198,23 @@ export class TableBasicComponent implements OnInit {
   }
 
   exportar(){
-    
+
   }
 
   obtenerComprobantes(){
     
     
     let cuit = this.cuitEmisor ? `&amp;cuitEmisor=${this.cuitEmisor}` : '';
-    let ptoVenta = this.cuitEmisor ? `&amp;ptoVta=${this.puntoVenta}` : '';
+    let ptoVenta = this.puntoVenta ? `&amp;ptoVta=${this.puntoVenta}` : '&amp;';
     if(cuit == ""){
       this.toast("error","Algo salió mal", "Debe ingresar CUIT.")
       return
     }
     
-    if(ptoVenta == ""){
-      this.toast("error","Algo salió mal", "Debe ingresar Punto de venta.")
-      return
-    }
+    // if(ptoVenta == ""){
+    //   this.toast("error","Algo salió mal", "Debe ingresar Punto de venta.")
+    //   return
+    // }
     
     let body = `?entorno=DEV&amp;webservice=wsfe${cuit}${ptoVenta}&amp;fechaDesde=20220501`
     
@@ -240,7 +240,7 @@ export class TableBasicComponent implements OnInit {
             importeNeto: i[10].stringValue,
             impuesto: i[11].stringValue,
             importeTotal: i[12].stringValue,
-            tipoReceptor: i[13].stringValue,
+            tipoReceptor: i[13].longValue,
             documentoReceptor: i[14].longValue,
             razonSocial: i[15].stringValue,
             caeCai: i[16].stringValue,
@@ -342,7 +342,7 @@ export class TableBasicComponent implements OnInit {
       let ptoVenta =  new TableItem({data: e.puntoVenta});
       let tipoFactura =  new TableItem({data: e.tipoFactura});
       let nroComp = new TableItem({data: e.nroComprobante});
-      let tipoDoc = new TableItem({data: "-"});
+      let tipoDoc = new TableItem({data: e.tipoReceptor});
       let nroDoc = new TableItem({data: e.documentoReceptor});
       let cliente = new TableItem({data: "0"});
       let importe = new TableItem({data: e.importe});

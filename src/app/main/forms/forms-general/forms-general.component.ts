@@ -15,6 +15,7 @@ export class FormsGeneralComponent implements OnInit {
   public loading: boolean;
   public userEdit: UsuarioCognitoModel = new UsuarioCognitoModel();
   public cuits = [];
+  public clienteSeleccionado;
 
   public NombreEdit: string;
   public companyList = [
@@ -36,7 +37,6 @@ export class FormsGeneralComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerClientes();
-    this.obtenerUsuariosPorCompania();
   }
   modal(event){
     this.showModal = event
@@ -44,35 +44,46 @@ export class FormsGeneralComponent implements OnInit {
 
   obtenerClientes(){
     this.loading = true;
-    this.service.obtenerClientes().subscribe((res:any)=>{
-      this.loading = false;
-      if(res && res.clientes){
-        res.clientes.forEach(i => {
-          this.listaClientes.push({content: i.rs, key: i.SK})
-        });
+    debugger
+    let clientes = JSON.parse(localStorage.getItem('cuits'));
 
-      }
- 
-    },
-    err =>{
-      this.loading = false;
+    clientes.forEach(cliente => {
+      this.service.obtenerClientes(cliente).subscribe((res:any)=>{
+        this.loading = false;
+        if(res && res.detalle){
+          res.detalle.forEach(i => {
+            this.listaClientes.push({content: i.rs, key: cliente})
+          });
+  
+        }
+   
+      },
+      err =>{
+        this.loading = false;
+  
+      })
 
-    })
+    });
   }
+  
 
-  obtenerUsuariosPorCompania(){
-    this.loading = true;
-    let company = localStorage.getItem('company');
-    this.service.obtenerUsuariosPorCompania(company).subscribe((res:any)=>{
-      this.loading = false;
-
-      if(res && res.detalle)
-        this.listaUsuarios = res.detalle;
-    },
-    err =>{
-      this.loading = false;
-
-    })
+  obtenerUsuariosPorCompania(event){
+    debugger;
+    if(event && event.item){
+      this.clienteSeleccionado = event.item.key
+    }
+      this.loading = true;
+      this.service.obtenerUsuariosPorCompania(this.clienteSeleccionado).subscribe((res:any)=>{
+        this.loading = false;
+  
+        if(res && res.detalle)
+          this.listaUsuarios = res.detalle;
+      },
+      err =>{
+        this.loading = false;
+  
+      })
+ 
   }
   borrarUsuario(id){
     let idUsuarioLogueado = localStorage.getItem('id');
@@ -87,7 +98,7 @@ export class FormsGeneralComponent implements OnInit {
 
     this.service.borrarUsuario(id).subscribe((res:any)=>{
       this.loading = false;
-      this.obtenerUsuariosPorCompania();
+       this.obtenerUsuariosPorCompania(this.clienteSeleccionado);
     },
     err =>{
       this.loading = false;
@@ -120,11 +131,15 @@ export class FormsGeneralComponent implements OnInit {
     }
   }
   confirmar(){
+    this.loading = true;
+
     console.log(this.userEdit);
     this.userEdit.cuits = this.cuits;
     this.service.modificarUsuario(this.userEdit).subscribe(res =>{
+      this.loading = false;
+      debugger
       this.visiblePopup();
-      this.obtenerUsuariosPorCompania();
+       this.obtenerUsuariosPorCompania(this.clienteSeleccionado);
     })
   }
   toast(detalle, duracion){
