@@ -35,6 +35,9 @@ export class AuthSignupComponent implements OnInit {
 ];
   public companySelected: any;
   public rolSelected: any;
+  infoUser: any;
+  message: string;
+
   constructor(protected formBuilder: FormBuilder,
               private router: Router,
               private service: AuthService,
@@ -65,7 +68,7 @@ export class AuthSignupComponent implements OnInit {
     this.router.navigate(['/auth/basic/signin'])
     // this.cerrarModal.emit(false);
   }
-  onSubmit() {
+  async onSubmit() {
     this.formGroup.markAllAsTouched();
     console.log(this.formGroup.value);
 
@@ -88,7 +91,7 @@ export class AuthSignupComponent implements OnInit {
     // body.company = this.companySelected;
     body.user_type_id = this.rolSelected;
     debugger
-    const user = Auth.signUp({
+    const user:any = await Auth.signUp({
       username: body.email,
       password: body.password,
       attributes: {
@@ -98,8 +101,14 @@ export class AuthSignupComponent implements OnInit {
       },
     
     })
-    console.log(user)
-    this.router.navigate(['/auth/basic/signin'])
+
+    console.log(user);
+    if(user && !user.userSub)
+      this.toast('error','Hubo un problema','El E-mail ingresado no existe.')
+
+    this.createUser(body, user.userSub);
+   
+
     // this.service.guardarUsuario(body).subscribe(res => {
     //   this.toast("success", "Exito", "Se registró el usuario correctamente");
     //   if(this.esRegistro)
@@ -114,6 +123,32 @@ export class AuthSignupComponent implements OnInit {
     // )
     /*this.router.navigate(['/auth/basic/signin'])*/
   
+  }
+
+  createUser(user, idUser){
+    localStorage.setItem('userId',idUser);
+    debugger
+    this.infoUser = {
+      userid: idUser,
+      nombre:  user.name,
+      apellido:  user.surname,
+      email:  user.email
+    }
+    this.service.createUser(this.infoUser).subscribe(
+      (response: any) =>{
+        // this.message = response.detalle;
+        localStorage.setItem("From","register");
+        this.router.navigate(['/auth/basic/confirmacion']);
+      },
+      err => {
+        debugger
+        if(err.error.codError == 306){
+          this.toast('error','Hubo un problema',err.error.detalleError)
+        }
+          // this.getUser();
+
+      }
+    )
   }
 
   toast(type, title, subtitle){

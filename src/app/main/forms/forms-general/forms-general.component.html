@@ -22,7 +22,7 @@
         </div>
       </div>
     </div> -->
-    <div class="box-input" *ngIf="listaClientes && listaClientes.length > 0">
+    <div class="box-input" [hidden]="rol == 'Administrador'" *ngIf="(listaClientes && listaClientes.length > 0)">
       <div class="span">Compañía</div>
       <ibm-combo-box
       style="width:100%"

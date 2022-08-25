@@ -80,6 +80,7 @@ export class AuthLoginComponent implements OnInit {
       
       if( tokens != null ) {
         console.log('Usuario autenticado');
+        localStorage.setItem("From","login");
         this.router.navigate(['/auth/basic/confirmacion']);
       }
 

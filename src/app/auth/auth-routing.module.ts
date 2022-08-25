@@ -40,7 +40,7 @@ const routes: Routes = [
         component: AuthForgotPasswordComponent,
       },
       {
-        path: 'confirmation',
+        path: 'confirmation/:from',
         component: AuthConfirmationComponent,
       },
     ],

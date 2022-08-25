@@ -1,8 +1,18 @@
-<div class="box-info">
+<div class="box-info" *ngIf="from == 'login'">
     <div class="atras">
-        <img src="assets/flecha-izquierda.png" />
+        <img (click)="atras()" src="assets/flecha-izquierda.png" />
     </div>
     <span *ngIf="!message">Espere un momento..</span>
     <img *ngIf="message" src="assets/esperar.png" />
     {{message}}
+</div>
+
+<div class="box-info" *ngIf="from == 'register'">
+    <div class="atras">
+        <img (click)="atras()" src="assets/flecha-izquierda.png" />
+    </div>
+    <img src="assets/add-user.png" />
+
+    <h4>¡Usuario registrado!</h4><br>
+    Se le envió un E-mail para verificar su cuenta.
 </div>

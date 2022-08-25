@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -9,36 +9,22 @@ import { AuthService } from '../auth.service';
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor( private service: AuthService,private router: Router) { }
+  constructor( private service: AuthService,private router: Router, private route: ActivatedRoute) { }
 
   infoUser: any;
   message: string;
+  from:any;
   ngOnInit(): void {
-    this.createUser();
+    this.from = localStorage.getItem("From");
+
+    if(this.from == 'login')
+      this.getUser();
   }
 
-  createUser(){
-    this.infoUser = {
-      userid: localStorage.getItem('userId'),
-      nombre:  localStorage.getItem('name'),
-      apellido:  localStorage.getItem('surname'),
-      email:  localStorage.getItem('email')
-    }
-    this.service.createUser(this.infoUser).subscribe(
-      (response: any) =>{
-        this.message = response.detalle
-      },
-      err => {
-        debugger
-        this.message = "Espere un momento para revisar si está asociado a algún cliente."
-        if(err.error.codError == 306)
-          this.getUser();
 
-      }
-    )
-  }
   getUser(){
-    this.service.getUser(this.infoUser.userid).subscribe(
+    let userId = localStorage.getItem('userId');
+    this.service.getUser(userId).subscribe(
       (response:any) =>{
         if(response.detalle[0].cuits && response.detalle[0].cuits.length > 0){
           debugger

@@ -18,6 +18,7 @@ export class FormsGeneralComponent implements OnInit {
   public clienteSeleccionado;
 
   public NombreEdit: string;
+  public rol: string;
   public companyList = [
   {content: "1"}
   ]
@@ -36,7 +37,13 @@ export class FormsGeneralComponent implements OnInit {
   constructor(private service: AppComponentService,private notificationService: NotificationService) { }
 
   ngOnInit(): void {
+    this.rol = localStorage.getItem('rol');
+
     this.obtenerClientes();
+    if(this.rol == 'Administrador')
+      this.obtenerUsuariosPorCompania('');
+    
+
   }
   modal(event){
     this.showModal = event
@@ -46,6 +53,8 @@ export class FormsGeneralComponent implements OnInit {
     this.loading = true;
     debugger
     let clientes = JSON.parse(localStorage.getItem('cuits'));
+
+
 
     clientes.forEach(cliente => {
       this.service.obtenerClientes(cliente).subscribe((res:any)=>{
@@ -73,16 +82,32 @@ export class FormsGeneralComponent implements OnInit {
       this.clienteSeleccionado = event.item.key
     }
       this.loading = true;
-      this.service.obtenerUsuariosPorCompania(this.clienteSeleccionado).subscribe((res:any)=>{
-        this.loading = false;
-  
-        if(res && res.detalle)
-          this.listaUsuarios = res.detalle;
-      },
-      err =>{
-        this.loading = false;
-  
-      })
+      if(this.rol == 'Administrador'){
+        this.service.obtenerUsuariosLista().subscribe((res:any)=>{
+          this.loading = false;
+    
+          if(res && res.detalle)
+            this.listaUsuarios = res.detalle;
+        },
+        err =>{
+          this.loading = false;
+    
+        })
+      }else{
+        this.service.obtenerUsuariosPorCompania(this.clienteSeleccionado).subscribe((res:any)=>{
+          this.loading = false;
+    
+          if(res && res.detalle)
+            this.listaUsuarios = res.detalle;
+        },
+        err =>{
+          this.loading = false;
+    
+        })
+      }
+      
+
+   
  
   }
   borrarUsuario(id){
