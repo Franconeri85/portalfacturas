@@ -39,16 +39,33 @@ export class FormsGeneralComponent implements OnInit {
   ngOnInit(): void {
     this.rol = localStorage.getItem('rol');
 
-    this.obtenerClientes();
-    if(this.rol == 'Administrador')
+    if(this.rol == 'Administrador'){
       this.obtenerUsuariosPorCompania('');
-    
+      this.obtenerTodosLosClientes();
+    }
+    else{
+      this.obtenerClientes();
+      
+    }
 
   }
   modal(event){
     this.showModal = event
   }
-
+  obtenerTodosLosClientes(){
+    this.service.obtenerCliente('').subscribe(
+      (res:any) =>{
+        debugger;
+        if(res && res.clientes){
+          res.clientes.forEach(i => {
+            this.listaClientes.push({content: i.rs, key: i.SK})
+          });
+  
+        }
+   
+      }
+    )
+  }
   obtenerClientes(){
     this.loading = true;
     debugger

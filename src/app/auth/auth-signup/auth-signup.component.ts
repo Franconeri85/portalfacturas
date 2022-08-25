@@ -37,6 +37,7 @@ export class AuthSignupComponent implements OnInit {
   public rolSelected: any;
   infoUser: any;
   message: string;
+  public loading = false;
 
   constructor(protected formBuilder: FormBuilder,
               private router: Router,
@@ -69,6 +70,8 @@ export class AuthSignupComponent implements OnInit {
     // this.cerrarModal.emit(false);
   }
   async onSubmit() {
+    this.loading = true;
+    
     this.formGroup.markAllAsTouched();
     console.log(this.formGroup.value);
 
@@ -90,6 +93,7 @@ export class AuthSignupComponent implements OnInit {
     body.password = this.formGroup.value.password;
     // body.company = this.companySelected;
     body.user_type_id = this.rolSelected;
+
     debugger
     const user:any = await Auth.signUp({
       username: body.email,
@@ -101,6 +105,7 @@ export class AuthSignupComponent implements OnInit {
       },
     
     })
+    this.loading = true;
 
     console.log(user);
     if(user && !user.userSub)
