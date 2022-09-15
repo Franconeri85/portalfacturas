@@ -157,6 +157,9 @@ export class TableBasicComponent implements OnInit {
       key: "99"
     },
   ]
+  public listaCuitEmisor = [
+    {content: "South Trade Network SRL", key: "30711727074"}
+  ];
   public cuitEmisor;
   public nroComprobante;
   public nroDocumento;
@@ -186,7 +189,7 @@ export class TableBasicComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+   this.obtenerClientes();
   }
 
   limpiar(){
@@ -200,10 +203,32 @@ export class TableBasicComponent implements OnInit {
   exportar(){
 
   }
+  obtenerClientes(){
+    this.loading = true;
+    let clientes = JSON.parse(localStorage.getItem('cuits'));
+    let listaClientes = [] 
+    clientes.forEach(cliente => {
+      this.service.obtenerClientes(cliente).subscribe((res:any)=>{
+        this.loading = false;
+        if(res && res.detalle){
+          res.detalle.forEach(i => {
+            listaClientes.push({content: i.rs, key: cliente})
+          });
+  
+        }
+   
+      },
+      err =>{
+        this.loading = false;
+  
+      })
 
+    });
+  }
+  
   obtenerComprobantes(){
     
-    
+    debugger
     let cuit = this.cuitEmisor ? `&amp;cuitEmisor=${this.cuitEmisor}` : '';
     let ptoVenta = this.puntoVenta ? `&amp;ptoVta=${this.puntoVenta}` : '&amp;';
     if(cuit == ""){
@@ -258,13 +283,21 @@ export class TableBasicComponent implements OnInit {
     const tmp = getSizeFrom(event.value)
     this.size = tmp
   }
+  selectCuitEmisor(event){
+    if(event)
+    this.cuitEmisor = event.item.key
+  else
+    this.cuitEmisor = "";
+
+  }
+
 
   toast(type, title, subtitle){
     this.notificationService.showToast({
       type: type,
       title: title,
       subtitle: subtitle,
-      target: "body",
+      target: "#notificationHolder3",
       message: "message",
       duration: 5000,
     });
@@ -327,15 +360,6 @@ export class TableBasicComponent implements OnInit {
       }),
     ]
     registros.forEach(e => {
-      // model.data = [
-      //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
-      //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
-      //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
-      //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
-      //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
-      //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
-      //   [new TableItem({data: ""}), new TableItem({data: "26/04/2022"}), new TableItem({data: "30659863789"}),new TableItem({data: "373"}),new TableItem({data: "FACTURA B"}),new TableItem({data: "138"}),new TableItem({data: "Sin identificar"}),new TableItem({data: "0"}),new TableItem({data: "CONSUMIDOR FINAL"}),new TableItem({data: "1.21"}),new TableItem({data: "72179997220128"}),new TableItem({data: ""})],
-      // ]
       let reg = new TableItem({data: ""});
       let fecha =  new TableItem({data: e.fecha}); 
       let cuit =  new TableItem({data: e.cuit}); 

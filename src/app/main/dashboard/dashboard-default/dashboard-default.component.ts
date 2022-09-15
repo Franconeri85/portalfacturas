@@ -195,9 +195,15 @@ export class DashboardDefaultComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.webServiceSelected = localStorage.getItem("webServiceSelected");
+    this.entornoSelected = localStorage.getItem("entornoSelected");
+    this.yearSelected = localStorage.getItem("yearSelected");
+    this.monthSelected = localStorage.getItem("monthSelected");
+    this.companySelected = localStorage.getItem("companySelected");
+
     this.obtenerDiaActual();
-   
-    this.inicializar();
+    this.inicializar()
     this.obtenerClientes();
   }
 
@@ -223,7 +229,7 @@ export class DashboardDefaultComponent implements OnInit {
     },
     (err: any) =>{
       this.loading = false;
-      this.toast(err.error.detalleError, 5000);
+      this.toast(err.error.detalleError, 5000, "warning");
     })
   }
   selectedCompany(event){
@@ -233,6 +239,7 @@ export class DashboardDefaultComponent implements OnInit {
     else
       this.companySelected = "";
 
+    localStorage.setItem("companySelected", this.companySelected);
   }
   selectedWebService(event){
     console.log(event)
@@ -240,7 +247,9 @@ export class DashboardDefaultComponent implements OnInit {
       this.webServiceSelected = event.item.key
     else
       this.webServiceSelected = "";
-   
+
+    localStorage.setItem("webServiceSelected", this.webServiceSelected);
+
   }
   selectedEntorno(event){
     console.log(event)
@@ -249,6 +258,7 @@ export class DashboardDefaultComponent implements OnInit {
     else
       this.entornoSelected = "";
 
+    localStorage.setItem("entornoSelected", this.entornoSelected);
     
   }
   selectedYear(event){
@@ -257,6 +267,9 @@ export class DashboardDefaultComponent implements OnInit {
       this.yearSelected = event.item.key
     else
       this.yearSelected = "";
+
+    localStorage.setItem("yearSelected", this.yearSelected);
+    
   }
   selectedMonth(event){
     console.log(event.item.key)
@@ -264,6 +277,9 @@ export class DashboardDefaultComponent implements OnInit {
       this.monthSelected = event.item.key
     else
       this.monthSelected = ""
+
+    localStorage.setItem("monthSelected", this.monthSelected);
+    
   }
   cargarTabla()  {
     const model = new TableModel()
@@ -545,9 +561,13 @@ export class DashboardDefaultComponent implements OnInit {
     this.createChartStaticsCantidad();
   }
 
-  toast(detalle, duracion){
+  toast(detalle, duracion, type?){
+    let typeError = "error";
+    if(type)
+      typeError = type;
+
     this.notificationService.showToast({
-      type: "error",
+      type: typeError,
       title: "Algo salió mal",
       subtitle: detalle,
       caption: "",
