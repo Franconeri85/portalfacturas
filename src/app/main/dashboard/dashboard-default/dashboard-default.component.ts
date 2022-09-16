@@ -29,7 +29,7 @@ export class DashboardDefaultComponent implements OnInit {
   public themeRiverOpts = {}
   public realtimeOpts = {}
   public model = getDummyModel();
-  public listaClientes: any;
+  public listaClientes = [];
   public fecha:any;
   public colas:any;
   public companyList = [
@@ -194,8 +194,13 @@ export class DashboardDefaultComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    
 
+
+
+
+    
     this.webServiceSelected = localStorage.getItem("webServiceSelected");
     this.entornoSelected = localStorage.getItem("entornoSelected");
     this.yearSelected = localStorage.getItem("yearSelected");
@@ -206,6 +211,7 @@ export class DashboardDefaultComponent implements OnInit {
     this.inicializar()
     this.obtenerClientes();
   }
+
 
   inicializar(){
     this.loading = true;
@@ -577,7 +583,7 @@ export class DashboardDefaultComponent implements OnInit {
     })
   }
 
-  createChartStaticsVelocidad(){
+  async createChartStaticsVelocidad(){
 
 
     /** CAE */
@@ -615,22 +621,37 @@ export class DashboardDefaultComponent implements OnInit {
     });
 
 
-    console.log(velocidadCAEFecha);
-    this.chartOptionsStatics = {
+    
 
+
+    var dom = await (<HTMLDivElement>document.getElementById('chart-container'));
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+    
+    option = {
+    
       tooltip: {
         trigger: 'axis',
         axisPointer: {
           type: 'cross',
           label: {
-            backgroundColor: '#6a7985'
+            backgroundColor: '#9b9b9b'
           }
         }
       },
       legend: {
         data: ['PDF', 'CAE', 'MAIL', 'OTROS']
       },
-
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
       grid: {
         left: '3%',
         right: '4%',
@@ -642,7 +663,6 @@ export class DashboardDefaultComponent implements OnInit {
           type: 'category',
           boundaryGap: false,
           data: velocidadCAEFecha
-
         }
       ],
       yAxis: [
@@ -655,6 +675,7 @@ export class DashboardDefaultComponent implements OnInit {
           name: 'PDF',
           type: 'line',
           stack: 'Total',
+          color: "#00762f",
           areaStyle: {},
           emphasis: {
             focus: 'series'
@@ -665,6 +686,7 @@ export class DashboardDefaultComponent implements OnInit {
           name: 'CAE',
           type: 'line',
           stack: 'Total',
+          color: "#002283",
           areaStyle: {},
           emphasis: {
             focus: 'series'
@@ -675,6 +697,7 @@ export class DashboardDefaultComponent implements OnInit {
           name: 'MAIL',
           type: 'line',
           stack: 'Total',
+          color: "#01646e",
           areaStyle: {},
           emphasis: {
             focus: 'series'
@@ -682,9 +705,10 @@ export class DashboardDefaultComponent implements OnInit {
           data: velocidadMAILData
         },
         {
-          name: 'OTROS',
+          name: 'OTRO',
           type: 'line',
           stack: 'Total',
+          color: "#fd3a00",
           areaStyle: {},
           emphasis: {
             focus: 'series'
@@ -692,10 +716,100 @@ export class DashboardDefaultComponent implements OnInit {
           data: velocidadOTROData
         }
       ]
+    };
+    
+    
+    
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
     }
+    
+    window.addEventListener('resize', myChart.resize);
+
+
+
+
+
+    // this.chartOptionsStatics = {
+
+    //   tooltip: {
+    //     trigger: 'axis',
+    //     axisPointer: {
+    //       type: 'cross',
+    //       label: {
+    //         backgroundColor: '#6a7985'
+    //       }
+    //     }
+    //   },
+    //   legend: {
+    //     data: ['PDF', 'CAE', 'MAIL', 'OTROS']
+    //   },
+
+    //   grid: {
+    //     left: '3%',
+    //     right: '4%',
+    //     bottom: '3%',
+    //     containLabel: true
+    //   },
+    //   xAxis: [
+    //     {
+    //       type: 'category',
+    //       boundaryGap: false,
+    //       data: velocidadCAEFecha
+
+    //     }
+    //   ],
+    //   yAxis: [
+    //     {
+    //       type: 'value'
+    //     }
+    //   ],
+    //   series: [
+    //     {
+    //       name: 'PDF',
+    //       type: 'line',
+    //       stack: 'Total',
+    //       areaStyle: {},
+    //       emphasis: {
+    //         focus: 'series'
+    //       },
+    //       data: velocidadPDFData
+    //     },
+    //     {
+    //       name: 'CAE',
+    //       type: 'line',
+    //       stack: 'Total',
+    //       areaStyle: {},
+    //       emphasis: {
+    //         focus: 'series'
+    //       },
+    //       data: velocidadCAEData
+    //     },
+    //     {
+    //       name: 'MAIL',
+    //       type: 'line',
+    //       stack: 'Total',
+    //       areaStyle: {},
+    //       emphasis: {
+    //         focus: 'series'
+    //       },
+    //       data: velocidadMAILData
+    //     },
+    //     {
+    //       name: 'OTROS',
+    //       type: 'line',
+    //       stack: 'Total',
+    //       areaStyle: {},
+    //       emphasis: {
+    //         focus: 'series'
+    //       },
+    //       data: velocidadOTROData
+    //     }
+    //   ]
+    // }
   }
 
-  createChartStaticsCantidad(){
+  async createChartStaticsCantidad(){
 
 
     /** CAE */
@@ -732,9 +846,18 @@ export class DashboardDefaultComponent implements OnInit {
       cantidadOTROData.push(x.data);
     });
 
-
-    this.chartOptionsStatics2 = {
- 
+    debugger
+    var dom = await (<HTMLDivElement>document.getElementById('chart-container2'));
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+    
+    option = {
+  
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -747,7 +870,7 @@ export class DashboardDefaultComponent implements OnInit {
       legend: {
         data: ['PDF', 'CAE', 'MAIL', 'OTROS']
       },
-
+   
       grid: {
         left: '3%',
         right: '4%',
@@ -759,7 +882,6 @@ export class DashboardDefaultComponent implements OnInit {
           type: 'category',
           boundaryGap: false,
           data: cantidadCAEFecha
-
         }
       ],
       yAxis: [
@@ -773,6 +895,7 @@ export class DashboardDefaultComponent implements OnInit {
           type: 'line',
           stack: 'Total',
           areaStyle: {},
+          color: "#00762f",
           emphasis: {
             focus: 'series'
           },
@@ -782,6 +905,7 @@ export class DashboardDefaultComponent implements OnInit {
           name: 'CAE',
           type: 'line',
           stack: 'Total',
+          color: "#002283",
           areaStyle: {},
           emphasis: {
             focus: 'series'
@@ -792,6 +916,7 @@ export class DashboardDefaultComponent implements OnInit {
           name: 'MAIL',
           type: 'line',
           stack: 'Total',
+          color: "#01646e",
           areaStyle: {},
           emphasis: {
             focus: 'series'
@@ -799,9 +924,10 @@ export class DashboardDefaultComponent implements OnInit {
           data: cantidadMAILData
         },
         {
-          name: 'OTROS',
+          name: 'OTRO',
           type: 'line',
           stack: 'Total',
+          color: "#fd3a00",
           areaStyle: {},
           emphasis: {
             focus: 'series'
@@ -809,7 +935,17 @@ export class DashboardDefaultComponent implements OnInit {
           data: cantidadOTROData
         }
       ]
-    } 
+    };
+    
+    
+    
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+    
+    window.addEventListener('resize', myChart.resize);
+
+
     
   }
 }
